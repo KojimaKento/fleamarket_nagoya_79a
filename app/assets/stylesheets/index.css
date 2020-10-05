@@ -1,0 +1,38 @@
+/* リセットCSS */
+body {
+  font-size: 14px;
+  color: #333;
+  margin: 0 auto;
+}
+h1,h2,h3,h4,h5,h6,p {
+  padding: 10px 0;
+  margin: 0;
+}
+
+ul,li {
+  padding: 0;
+  margin: 0;
+}
+
+/* 商品投稿ページ */
+.title-bar{
+  background-color: rgb(245, 245, 245);
+  height: 128px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main{
+  background-color: rgb(245, 245, 245);
+  height: 1280px;
+  display: flex;
+  justify-content: center;
+}
+
+.main-content{
+  width: 700px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+}

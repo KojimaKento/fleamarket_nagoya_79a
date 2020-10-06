@@ -14,7 +14,7 @@ ul,li {
   margin: 0;
 }
 
-/* 商品投稿ページ */
+/* ロゴ */
 .title-bar{
   background-color: rgb(245, 245, 245);
   height: 128px;
@@ -30,6 +30,7 @@ ul,li {
   justify-content: center;
 }
 
+/* 出品画像 */
 .exhibition-image{
   background-color: rgb(255, 255, 255);
 }
@@ -72,5 +73,6 @@ label{
   background-color: rgb(245, 245, 245);
   border: 1px dashed rgb(204, 204, 204);
   display: flex;
-  height: 128px;
+  height: 150px;
+  box-sizing: border-box;
 }

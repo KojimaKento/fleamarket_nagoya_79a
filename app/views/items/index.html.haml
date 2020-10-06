@@ -1,1 +1,15 @@
-.wrapper test
+.main
+  .header
+    .main_header
+      .icon
+        =  image_tag "logo/logo.png", class:"test"
+      .search
+        .box
+          %form{"accept-charset" => "UTF-8", :action => "#", :method => "get"}
+          .box_internal
+            %input#searchInput.searchBox--input{:name => "key", :placeholder => "キーワードから探す"}/
+          .push_button
+            %button{:type => "submit"}
+            .searchBox__icon
+              =image_tag "icon/icon-search 1.png",class:"bottom"
+

@@ -60,3 +60,8 @@ label{
   height: 150px;
   box-sizing: border-box;
 }
+
+.icon{
+  display: flex;
+  justify-content: end;
+}

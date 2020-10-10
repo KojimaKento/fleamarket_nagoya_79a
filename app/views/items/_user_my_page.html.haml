@@ -1,0 +1,18 @@
+%head 
+  %meta{"charset":"UTF-8"}
+  %title マイページ hurima スマホで簡単 フリマアプリ
+
+%body 
+  .Pc__header 
+    .Pc__header__inner
+      .Pc__header__top
+        %h1
+          %a{:href => "https://www.hurima.com/jp/"}
+            %img{:alt => "hurima", :height => "36", :src => "logo.png", :width => "134"}/
+        %form.Pc__header__form{:action => "https://www.hurima.com/jp/search/"}
+          %input.input__default{:name => "keyword", :placeholder => "何かお探しですか？", :type => "search", :value => ""}/
+          %i.icon__search
+  .Nav ナブ
+  .Main メイン
+  .Aside アサイド
+  .Footer フッター

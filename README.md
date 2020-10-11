@@ -7,7 +7,7 @@
 |email|string|null: false, unique: true|
 |password|string|null: false|
 ### Association
-- has_many: items
+- has_many: items, :dependent => :destroy
 - has_one: credit_card
 - has_one: profile
 - has_one: sending_destination

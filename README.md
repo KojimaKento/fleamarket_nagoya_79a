@@ -118,7 +118,7 @@
 |:-------|:------|:--------|
 |area|string|null: false|
 ### Association
-- has_many: item
+- has_many: items
 
 ## postageテーブル
 |Column|Type|Option|

@@ -8,7 +8,7 @@
 |password|string|null: false|
 ### Association
 - has_many: items, :dependent => :destroy
-- has_many: ordered
+- has_many: orders
 - has_one: credit_card
 - has_one: profile
 - has_one: sending_destination
@@ -66,7 +66,7 @@
 ### Association
 - has_many: item_images
 - has_one: item
-- belongs_to_active_hash: categories
+- belongs_to_active_hash: category
 - belongs_to_active_hash: brand
 - belongs_to_active_hash: condition
 - belongs_to_active_hash: shipping_date

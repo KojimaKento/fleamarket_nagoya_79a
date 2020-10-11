@@ -35,11 +35,8 @@
 |Column|Type|Option|
 |:-------|:------|:--------|
 |user|references|null: false, foreign_key: true|
-|card_number|integer|null: false, unique: true|
-|card_year|integer|null: false|
-|card_month|integer|null: false|
-|card_day|integer|null: false|
-|security_code|integer|null: false|
+|owner_id|string|null: false|
+|card_id|string|null: false|
 ### Association
 - has_one: user
 
@@ -63,22 +60,16 @@
 |introduction|text|null: false|
 |price|integer|null: false|
 |item_image|references|null: false, foreign_key: true|
-|category|references|null: false, foreign_key: true|
-|brand|references|null: false, foreign_key: true|
-|item_condition|references|null: false, foreign_key: true|
-|shipping_date|references|null:false, foreign_key: true|
-|delivery_source_area|references|null: false, foreign_key: true|
-|postage|references|null: false, foreign_key: true|
 |seller|references|null: false, foreign_key: true|
 |buyer|references|foreign_key: true|
 ### Association
 - has_many: item_images
-- belongs_to: categories
-- belongs_to: brand
-- belongs_to: condition
-- belongs_to: shipping_date
-- belongs_to: delivery_source_area
-- belongs_to: postage
+- belongs_to_active_hash: categories
+- belongs_to_active_hash: brand
+- belongs_to_active_hash: condition
+- belongs_to_active_hash: shipping_date
+- belongs_to_active_hash: delivery_source_area
+- belongs_to_active_hash: postage
 - belongs_to :seller, class_name: "user"
 - belongs_to :buyer, class_name: "user"
 
@@ -90,48 +81,7 @@
 ### Association
 - belongs_to: item
 
-## categoriesテーブル
-|Column|Type|Option|
-|:-------|:------|:--------|
-|name|string|null: false|
-|ancestry|string||
-### Association
-- has_many: items
 
-## brandsテーブル
-|Column|Type|Option|
-|:-------|:------|:--------|
-|name|string||
-### Association
-- has_many: item
-
-## item_conditionsテーブル
-|Column|Type|Option|
-|:-------|:------|:--------|
-|condition|string|null: false|
-### Association
-- has_many: item
-
-## shipping_datesテーブル
-|Column|Type|Option|
-|:-------|:------|:--------|
-|date|string|null: false|
-### Association
-- has_many: item
-
-## delivery_source_areasテーブル
-|Column|Type|Option|
-|:-------|:------|:--------|
-|area|string|null: false|
-### Association
-- has_many: items
-
-## postageテーブル
-|Column|Type|Option|
-|:-------|:------|:--------|
-|postage|string|null: false|
-### Association
-- has_many: item
 
 This README would normally document whatever steps are necessary to get the
 application up and running.

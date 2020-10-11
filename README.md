@@ -83,14 +83,14 @@
 ### Association
 - belongs_to: item
 
-## orderedテーブル
+## ordersテーブル
 |Column|Type|Option|
 |:-------|:------|:--------|
 |user|references|null: false, foreign_key: true|
 |item|references|null: false, foreign_key: true|
 ### Association
 - belongs_to: user
-- has_one: item
+- belongs_to: item
 
 
 

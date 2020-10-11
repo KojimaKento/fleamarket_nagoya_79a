@@ -8,6 +8,7 @@
 |password|string|null: false|
 ### Association
 - has_many: items, :dependent => :destroy
+- has_many: ordered
 - has_one: credit_card
 - has_one: profile
 - has_one: sending_destination
@@ -64,6 +65,7 @@
 |buyer|references|foreign_key: true|
 ### Association
 - has_many: item_images
+- has_one: item
 - belongs_to_active_hash: categories
 - belongs_to_active_hash: brand
 - belongs_to_active_hash: condition
@@ -80,6 +82,17 @@
 |item|references|null: false, foreign_key: true|
 ### Association
 - belongs_to: item
+
+## orderedテーブル
+|Column|Type|Option|
+|:-------|:------|:--------|
+|user|references|null: false, foreign_key: true|
+|item|references|null: false, foreign_key: true|
+### Association
+- belongs_to: user
+- has_one: item
+
+
 
 
 

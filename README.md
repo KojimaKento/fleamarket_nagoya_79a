@@ -11,6 +11,9 @@
 - has_one: credit_card
 - has_one: profile
 - has_one: sending_destination
+- has_many: sold_items, -> { where("buyer_id is not NULL"), foreign_key: "seller_id", class_name: "item"
+- has_many :selling_items, -> { where("buyer_id is NULL") }, foreign_key: "seller_id", class_name: "item"
+- has_many: bought_items, foreign_key: "buyer_id", class_name: "item"
 
 ## profilesテーブル
 |Column|Type|Option|
@@ -66,8 +69,9 @@
 |shipping_date|references|null:false, foreign_key: true|
 |delivery_source_area|references|null: false, foreign_key: true|
 |postage|references|null: false, foreign_key: true|
+|seller|references|null: false, foreign_key: true|
+|buyer|references|foreign_key: true|
 ### Association
-- belongs_to: user
 - has_many: item_images
 - belongs_to: categories
 - belongs_to: brand
@@ -75,6 +79,8 @@
 - belongs_to: shipping_date
 - belongs_to: delivery_source_area
 - belongs_to: postage
+- belongs_to :seller, class_name: "user"
+- belongs_to :buyer, class_name: "user"
 
 ## item_imagesテーブル
 |Column|Type|Option|

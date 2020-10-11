@@ -1,18 +1,36 @@
-.SignupPage {
+// mixin
+
+@mixin Account-btn() {
+  width: 100%;
+  margin: 60px 0 0;
+  line-height: 48px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+}
+
+// アカウントページ
+
+.AccountPage  {
   background-color: #f5f5f5;
 }
 
-.SignupPage__header {
+.AccountPage__header {
   height: 128px;
   text-align: center;
   padding-top: 45px;
 }
 
-.SignupPage__header img {
+.AccountPage__header img {
   width: 185px;
   height: 49px;
-  
 }
+
+// 新規登録ページ
 
 .SignupPage__main {
   width: 700px;
@@ -53,6 +71,7 @@
     font-size: 16px;
   }
 }
+
 .form-require {
   background-color: #ea352d;
   margin: 0 0 0 8px;
@@ -63,21 +82,89 @@
   vertical-align: top;
 }
 .Signup-button {
-  width: 100%;
-  margin: 60px 0 0;
-  line-height: 48px;
-  text-align: center;
-  cursor: pointer;
-  border-radius: 4px;
-  font-size: 14px;
-  background: #ea352d;
-  border: 1px solid #ea352d;
-  color: #fff;
+  @include Account-btn();
 }
 
-.SignupPage__footer {
+.AccountPage__footer {
   height: 220px;
+}
 
+// ログインページ
+
+.SigninPage__main {
+  width: 450px;
+  margin: 0 auto;
+  background-color: #fff;
+
+  .SigninPage__main__nothing {
+    font-size: 14px;
+    padding: 40px 65px;
+    text-align: center;
+    border-bottom: 1px solid #f5f5f5;
+    
+    .link-signup {
+      display: block;
+      margin: 8px 0 0;
+      border-radius: 4px;
+      background-color: #0099e8;
+      color: #fff;
+      line-height: 40px;
+    }
+  }
+
+  .SigninPage__main__sns {
+    padding: 30px 65px;
+    .btn-normal {
+      display: block;
+      width: 100%;
+      line-height: 48px;
+      font-size: 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      text-align: center;
+      margin: 16px 0 0;
+      position: relative;
+    }
+    .with-google {
+      background-color: #fff;
+      border: 1px solid #979797;
+      color: #000;
+    }
+    .with-facebook {
+      background-color: #385185;
+      border: 1px solid;
+      color: #fff;
+    }
+    .with-apple {
+      background-color: #000;
+      border: 1px solid;
+      color: #fff;
+    }
+
+    .icon-sns {
+      font-size: 18px;
+      position: absolute;
+      top: 15px;
+      left: 15px;
+    }
+  }
+
+  .SigninPage__main__form {
+    padding: 20px 65px 35px;
+    &--content {
+      max-width: 350px;
+      margin: 0 auto;
+    }
+  }
+}
+
+.Signin-button {
+  @include Account-btn();
+  margin-bottom: 40px;
 }
 
 
+.forgot-password {
+  color: #0099e8;
+  font-size: 14px;
+}

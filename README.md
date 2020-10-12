@@ -27,7 +27,7 @@
 |introduction|string||
 |avatar|string||
 ### Association
-- has_one: user
+- belongs_to: user
 
 
 ## credit_cardsテーブル

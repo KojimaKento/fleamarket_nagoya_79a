@@ -23,9 +23,7 @@
 |last_name|string|null: false|
 |first_name_kana|string|null: false|
 |last_name_kana|string|null: false|
-|birth_year|date|null: false|
-|birth_month|date|null: false|
-|birth_day|date|null: false|
+|birthday|date|null: false|
 |introduction|string||
 |avatar|string||
 ### Association
@@ -36,10 +34,10 @@
 |Column|Type|Option|
 |:-------|:------|:--------|
 |user|references|null: false, foreign_key: true|
-|owner_id|string|null: false|
+|customer_id|string|null: false|
 |card_id|string|null: false|
 ### Association
-- has_one: user
+- belongs_to: user
 
 ## sending_destinationテーブル
 |Column|Type|Option|
@@ -51,7 +49,7 @@
 |address|string|null: false|
 |apartment|string||
 ### Association
-- has_one: user
+- belongs_to: user
 
 
 ## itemsテーブル
@@ -60,12 +58,17 @@
 |name|string|null: false|
 |introduction|text|null: false|
 |price|integer|null: false|
-|item_image|references|null: false, foreign_key: true|
 |seller|references|null: false, foreign_key: true|
 |buyer|references|foreign_key: true|
+|category_id|integer|null: false|
+|brand_id|integer|null: false|
+|condition_id|integer|null: false|
+|shipping_date_id|integer|null: false|
+|delivery_source_area_id|integer|null: false|
+|postage_id|integer|null: false|
+
 ### Association
 - has_many: item_images
-- has_one: item
 - belongs_to_active_hash: category
 - belongs_to_active_hash: brand
 - belongs_to_active_hash: condition

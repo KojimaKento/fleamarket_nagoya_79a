@@ -1,6 +1,6 @@
 // mixin
 
-@mixin Account-btn() {
+@mixin account-btn() {
   width: 100%;
   margin: 60px 0 0;
   line-height: 48px;
@@ -13,7 +13,21 @@
   color: #fff;
 }
 
-// アカウントページ
+@mixin account-main() {
+  width: 700px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+@mixin account-title() {
+  font-size: 22px;
+  padding: 32px;
+  text-align: center;
+  border-bottom: 1px solid #f5f5f5;
+  font-weight: 600;
+}
+
+// アカウントページ全般
 
 .AccountPage  {
   background-color: #f5f5f5;
@@ -30,33 +44,12 @@
   height: 49px;
 }
 
-// 新規登録ページ
-
-.SignupPage__main {
-  width: 700px;
-  margin: 0 auto;
-  background-color: #fff;
-  .SignupPage__main__title {
-    font-size: 22px;
-    padding: 32px;
-    text-align: center;
-    border-bottom: 1px solid #f5f5f5;
-    font-weight: 600;
-  }
-  .SignupPage__main__form {
-    padding: 40px 40px 90px;
-    &--content {
-      max-width: 350px;
-      margin: 0 auto;
-    }
-  }
-}
-
 .FormField {
   &:not(:first-of-type) {
     margin-top: 32px;
   }
   &__label{
+    font-size: 14px;
     font-weight: 600;
   }
   &__input {
@@ -72,6 +65,23 @@
   }
 }
 
+
+// 新規登録ページ
+
+.SignupPage__main {
+  @include account-main();
+  .SignupPage__main__title {
+    @include account-title();
+  }
+  .SignupPage__main__form {
+    padding: 40px 40px 90px;
+    &--content {
+      max-width: 345px;
+      margin: 0 auto;
+    }
+  }
+}
+
 .form-require {
   background-color: #ea352d;
   margin: 0 0 0 8px;
@@ -82,7 +92,7 @@
   vertical-align: top;
 }
 .Signup-button {
-  @include Account-btn();
+  @include account-btn();
 }
 
 .AccountPage__footer {
@@ -159,12 +169,38 @@
 }
 
 .Signin-button {
-  @include Account-btn();
+  @include account-btn();
   margin-bottom: 40px;
 }
-
 
 .forgot-password {
   color: #0099e8;
   font-size: 14px;
+}
+
+// パスワード再登録ページ
+
+.PasswordPage__main {
+  @include account-main();
+  .PasswordPage__main__title {
+    @include account-title();
+  }
+  .PasswordPage__main__form {
+    padding: 40px 40px 90px;
+    &--content {
+      max-width: 320px;
+      margin: 0 auto;
+    }
+  }
+}
+
+.passwordreset-notice {
+  font-size: 12px;
+  margin: 8px 0 0;
+  color: #888;
+
+}
+
+.Password-button {
+  @include account-btn();
 }

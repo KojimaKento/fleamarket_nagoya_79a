@@ -17,7 +17,7 @@
   @include title-bar();
   background-color: rgb(255, 255, 255);
   margin: 0px 365px 0px 360px;
-  width: 700px;
+  width: 620px;
 }
 
 .floor{
@@ -32,7 +32,7 @@
 }
 
 .title{
-  width: 700px;
+  width: 620px;
   display: inline-block;
   color:rgb(51, 51, 51);
   box-sizing: border-box;
@@ -104,7 +104,7 @@
     display: inline-block;
     height: 150px;
     box-sizing: border-box;
-    width: inherit;
+    width: 620px;
   }
   &__icon{
     display: flex;
@@ -133,7 +133,7 @@
   padding: 40px;
   width: 700px;
   &__title{
-    width: inherit;
+    width: 620px;
     display: inline-block;
     color:rgb(51, 51, 51);
     box-sizing: border-box;
@@ -152,7 +152,7 @@
 .form{
   margin-top: 16px;
   &__name{
-    width: 700px;
+    width: 620px;
     height: 48px;
     border: 1px solid #ccc;
     padding: 0 16px;
@@ -160,7 +160,7 @@
     box-sizing: border-box;
   }
   &__explain{
-    width: 700px;
+    width: 620px;
     border: 1px solid #ccc;
     padding: 13px 16px;
     border-radius:5px;
@@ -195,11 +195,11 @@
   padding: 40px;
   width: 700px;
   &__name{
-    width: inherit;
+    width: 620px;
     margin-top: 16px;
   }
   &__title{
-    width: inherit;
+    width: 620px;
     display: inline-block;
     box-sizing: border-box;
     margin-top: 32px;
@@ -207,7 +207,7 @@
 }
 
 .select-name{
-  width: inherit;
+  width: 620px;
   padding: 0 56px 0 16px;
   color: #222;
   font-size: 16px;
@@ -223,12 +223,12 @@
   padding: 40px;
   width: 700px;
   &__name{
-    width: inherit;
+    width: 620px;
     margin-top: 16px;
     box-sizing: border-box;
   }
   &__title{
-    width: inherit;
+    width: 620px;
     display: inline-block;
     color:rgb(51, 51, 51);
     box-sizing: border-box;
@@ -253,7 +253,7 @@
     display: flex;
   }
   &__title{
-    width: inherit;
+    width: 620px;
     display: inline-block;
     color:rgb(51, 51, 51);
     box-sizing: border-box;

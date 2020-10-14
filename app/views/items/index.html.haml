@@ -1,8 +1,7 @@
 .top
   .header
     .header__main
-      %a{:href => "#",class:"header__main__icon"}
-        = image_tag "logo/logo.png", class:"image"
+      = link_to image_tag("logo/logo.png", class:"header__main__icon"), "#"
       .search
         .box
           %form{"accept-charset" => "UTF-8", :action => "#", :method => "get",class:"box_internal"}
@@ -13,14 +12,14 @@
     .nav
       .listsleft
         .listsleft__category
-          %a{:href => "#", class:"btn"} カテゴリー
+          = link_to "カテゴリー", "#", class: "btn"
         .listsleft__brand
-          %a{:href => "#", class:"btn"} ブランド
+          = link_to "ブランド", "#", class: "btn" 
       .listsright
         .listsright__login
-          %a{:href => "#", class:"btn"} ログイン
+          = link_to "ログイン", "#", class: "btn"
         .listsright__sign-up
-          %a{:href => "#", class:"btn"} 新規会員登録
+          = link_to "新規会員登録", "#", class: "btn" 
 .main
   .visual
     .content
@@ -31,10 +30,9 @@
         %br
         フリマアプリです
       .log__btn
-        %a{:href => "#", class:"abtn"}
-          = image_tag "pict/app.png",class:"bottom editing"
-        %a{:href => "#", class:"gbtn"}
-          = image_tag "pict/google-play-badge.png",class:"bottom"
+        .abtn
+          =link_to image_tag("pict/app.png",class:"bottom editing"),"#"
+        =link_to image_tag("pict/google-play-badge.png",class:"gbtn bottom"),"#"
   .topintroduction
     .subtitle
       FURIMAが選ばれる3つの理由
@@ -74,10 +72,9 @@
         %br
         ほしかったあの商品に出会えるかもしれません。
       .log__btn
-        %a{:href => "#", class:"abtn"}
-          = image_tag "pict/app.png",class:"bottom editing"
-        %a{:href => "#", class:"gbtn"}
-          = image_tag "pict/google-play-badge.png",class:"bottom"
+        .abtn
+          =link_to image_tag("pict/app.png",class:"bottom editing"),"#"
+        =link_to image_tag("pict/google-play-badge.png",class:"gbtn bottom"),"#"
   .topkeyfeatures
     .subtitle
       FURIMAの特徴
@@ -101,11 +98,11 @@
     .head__title
       ピックアップブランド
     .probuctbox
-      %a{:href => "#", class:"probuctbox__title"}新規投稿商品
+      = link_to "新規投稿商品", "#", class: "probuctbox__title" 
       .probuctbox__listss
         .probuctbox__product
-          %a{:href => "#", class:"photos"}
-            = image_tag "pict/beef.png",class:"photo"
+          = link_to "#", class:"photos" do
+            = image_tag "pict/beef.png", class:"photo"
             .photos__body
               .photos__body__name
                 テスト
@@ -118,8 +115,8 @@
                     1
                 %p{class:"tax"}（税込）
         .probuctbox__product
-          %a{:href => "#", class:"photos"}
-            = image_tag "pict/beef.png",class:"photo"
+          = link_to "#", class:"photos" do
+            = image_tag "pict/beef.png", class:"photo"
             .photos__body
               .photos__body__name
                 テスト
@@ -132,8 +129,8 @@
                     1
                 %p{class:"tax"}（税込）
         .probuctbox__product
-          %a{:href => "#", class:"photos"}
-            = image_tag "pict/beef.png",class:"photo"
+          = link_to "#", class:"photos" do
+            = image_tag "pict/beef.png", class:"photo"
             .photos__body
               .photos__body__name
                 テスト
@@ -146,8 +143,8 @@
                     1
                 %p{class:"tax"}（税込）
         .probuctbox__product
-          %a{:href => "#", class:"photos"}
-            = image_tag "pict/beef.png",class:"photo"
+          = link_to "#", class:"photos" do
+            = image_tag "pict/beef.png", class:"photo"
             .photos__body
               .photos__body__name
                 テスト
@@ -160,8 +157,8 @@
                     1
                 %p{class:"tax"}（税込）
         .probuctbox__product
-          %a{:href => "#", class:"photos"}
-            = image_tag "pict/beef.png",class:"photo"
+          = link_to "#", class:"photos" do
+            = image_tag "pict/beef.png", class:"photo"
             .photos__body
               .photos__body__name
                 テスト
@@ -175,13 +172,13 @@
                 %p{class:"tax"}（税込）
   .picupcontainer
     .head__title
-      ピックアップカテゴリー
+      ピックアップブランド
     .probuctbox
-      %a{:href => "#", class:"probuctbox__title"}アーカイブ
+      = link_to "アーカイブ", "#", class: "probuctbox__title" 
       .probuctbox__listss
         .probuctbox__product
-          %a{:href => "#", class:"photos"}
-            = image_tag "pict/beef.png",class:"photo"
+          = link_to "#", class:"photos" do
+            = image_tag "pict/beef.png", class:"photo"
             .photos__body
               .photos__body__name
                 テスト
@@ -194,8 +191,8 @@
                     1
                 %p{class:"tax"}（税込）
         .probuctbox__product
-          %a{:href => "#", class:"photos"}
-            = image_tag "pict/beef.png",class:"photo"
+          = link_to "#", class:"photos" do
+            = image_tag "pict/beef.png", class:"photo"
             .photos__body
               .photos__body__name
                 テスト
@@ -208,8 +205,8 @@
                     1
                 %p{class:"tax"}（税込）
         .probuctbox__product
-          %a{:href => "#", class:"photos"}
-            = image_tag "pict/beef.png",class:"photo"
+          = link_to "#", class:"photos" do
+            = image_tag "pict/beef.png", class:"photo"
             .photos__body
               .photos__body__name
                 テスト
@@ -222,8 +219,8 @@
                     1
                 %p{class:"tax"}（税込）
         .probuctbox__product
-          %a{:href => "#", class:"photos"}
-            = image_tag "pict/beef.png",class:"photo"
+          = link_to "#", class:"photos" do
+            = image_tag "pict/beef.png", class:"photo"
             .photos__body
               .photos__body__name
                 テスト
@@ -236,8 +233,8 @@
                     1
                 %p{class:"tax"}（税込）
         .probuctbox__product
-          %a{:href => "#", class:"photos"}
-            = image_tag "pict/beef.png",class:"photo"
+          = link_to "#", class:"photos" do
+            = image_tag "pict/beef.png", class:"photo"
             .photos__body
               .photos__body__name
                 テスト
@@ -255,10 +252,9 @@
       だれでもかんたん、人生を変えるフリマアプリ
     %p{class:"inner__text"}今すぐ無料ダウンロード！
     .inner__btn
-      %a{:href => "#", class:"abtn"}
-        = image_tag "pict/app.png",class:"bottom editing"
-      %a{:href => "#", class:"gbtn"}
-        = image_tag "pict/google-play-badge.png",class:"bottom"
+      .abtn
+        =link_to image_tag("pict/app.png",class:"bottom editing"),"#"
+      =link_to image_tag("pict/google-play-badge.png",class:"gbtn bottom"),"#"
 .footer
   .contents
     .content
@@ -266,36 +262,35 @@
         FURIMAについて
       %ul{class:"content__details"}
         %li{class:"detail"}
-          %a{:href => "#", class:"detail__list"}会社概要（運営会社）
+          = link_to "会社概要（運営会社）","#", class:"detail__list"
           %br
-          %a{:href => "#", class:"detail__list"}プライバシーポリシー
+          = link_to "プライバシーポリシー","#", class:"detail__list"
           %br
-          %a{:href => "#", class:"detail__list"}FURIMA利用規約
+          = link_to "FURIMA利用規約","#", class:"detail__list"
           %br
-          %a{:href => "#", class:"detail__list"}ポイントに関する特約
+          = link_to "ポイントに関する特約","#", class:"detail__list"
     .content
       .content__head
         FURIMAを見る
       %ul{class:"content__details"}
         %li{class:"detail"}
-          %a{:href => "#", class:"detail__list"}カテゴリー一覧
+          = link_to "カテゴリー一覧","#", class:"detail__list"
           %br
-          %a{:href => "#", class:"detail__list"}ブランド一覧
+          = link_to "ブランド一覧","#", class:"detail__list"
     .content
       .content__head
         ヘルプ＆ガイド
       %ul{class:"content__details"}
         %li{class:"detail"}
-          %a{:href => "#", class:"detail__list"}FURIMAガイド
+          = link_to "FURIMAガイド","#", class:"detail__list"
           %br
-          %a{:href => "#", class:"detail__list"}FURIMAロゴ利用ガイドライン
+          = link_to "FURIMAロゴ利用ガイドライン","#", class:"detail__list"
           %br
-          %a{:href => "#", class:"detail__list"}お知らせ
+          = link_to "お知らせ","#", class:"detail__list"
   .footer__logo
-    %a{:href => "#"}
-      = image_tag "logo/logo-white.png", class:"image"
+    =link_to image_tag( "logo/logo-white.png", class:"image" ),"#"
   %p{class:"footer__copyright"}© FURIMA
-%a{:herf => "#"}
+= link_to "#" do
   .purchasebotn
     %spen{class:"purchasebotn__text"}出品する
     = image_tag "icon/icon_camera.png",class:"purchasebotn__icon"

@@ -313,7 +313,7 @@
         .photos{
           background-color: #fff;
           display: inline-block;
-          .photo{
+          &_photo{
             width: 220px;
             height: 150px;
             position: relative;

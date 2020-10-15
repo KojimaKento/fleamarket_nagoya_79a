@@ -1,1 +1,19 @@
-.wrapper test
+.title-bar
+  %h1.app-title
+    = link_to 'fleamarket_nagoya_79a', '#'
+
+.content
+  .exhibition
+    .exhibition__title
+      %label.exhibition__label 出品画像
+      %span.exhibition__tag
+        必須
+      .exhibition__sentence 最大10枚までアップロードできます
+      .exhibition__photo
+        .exhibition__icon
+          = link_to '#' do
+            = icon('fas', 'camera fa-lg')
+        %p.exhibition__text1 ドラッグアンドドロップ 
+        .exhibition__text2 またはクリックしてファイルをアップロード
+　.goods
+

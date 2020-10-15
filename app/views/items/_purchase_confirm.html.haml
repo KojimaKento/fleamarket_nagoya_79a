@@ -1,24 +1,14 @@
-.title-bar
-  .title-bar2
+.header
+  .title-bar
     = link_to image_tag("logo/logo.png", class: "logo"), "#"
 
 .floor
   .content
-    .exhibition
-      .title
-        %label.label 出品画像
-        %span.tag 必須
-        .exhibition__sentence 最大10枚までアップロードできます
-        .exhibition__photo
-          .exhibition__icon
-            = link_to '#' do
-              = icon('fas', 'camera fa-lg')
-          %p.exhibition__text
-            ドラッグアンドドロップ 
-            %br 
-            またはクリックしてファイルをアップロード
+    .confirm
+      購入内容の確認
 
-.floor2   
+
+.footer
   .description
     .description__bar
       %ul.description__list

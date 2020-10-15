@@ -6,14 +6,14 @@
   align-items: center;
 }
 
-.title-bar{
+.header{
   @include title-bar();
   background-color: rgb(245, 245, 245);
   font-size: 36px;
   text-decoration: none;
 }
 
-.title-bar2{
+.title-bar{
   @include title-bar();
   background-color: rgb(255, 255, 255);
   margin: 0px 360px;
@@ -88,43 +88,24 @@
   margin-left: 508.5px;
 }
 
-/* 出品画像 */
-.exhibition{
-  background-color: rgb(255, 255, 255);
-  margin-bottom: 1px;
-  padding: 40px;
+/* 購入内容の確認 */
+.confirm{
+  display: block;
   width: 700px;
-  &__sentence{
-    font-size: 14px;
-    line-height: 1.4em;
-    margin: 16px 0px;
-  }
-  &__photo{
-    background-color: rgb(245, 245, 245);
-    border: 1px dashed rgb(204, 204, 204);
-    display: inline-block;
-    height: 150px;
-    box-sizing: border-box;
-    width: 620px;
-  }
-  &__icon{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 24px;
-    margin-top: 40px;
-    margin-bottom: 8px;
-    a {
-      color: rgb(34, 34, 34);;
-    }
-  }
-  &__text{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align : center;
-    font-size: 12px;
-  }
+  background-color: rgb(255, 255, 255);
+  padding: 32px;
+  height: 98px;
+  color: rgb(51, 51, 51);
+  text-align: center;
+  font-size: 24px;
+  line-height: 34px;
+  font-weight: 600;
+}
+
+
+
+.footer{
+  background-color: rgb(34, 34, 34);
 }
 
 .description{
@@ -172,6 +153,3 @@
   height: 62px;
 }
 
-.floor2{
-  background-color: rgb(34, 34, 34);
-}

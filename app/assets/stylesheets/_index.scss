@@ -75,7 +75,7 @@
           width: 100%;
           display: flex;
           margin-bottom: 5px;
-          .box_internal{
+          &_internal{
             width: calc(100% - 26px);
             height: 36px;
             .searchBox--input{
@@ -204,20 +204,20 @@
             color: #fff;
           }
         }
-      }
-      .list__text{
-        font-weight: bold;
-        font-size: 24px;
-        line-height: 50px;
-        margin: 0 0 0 2px;
-        .limit{
-          color: #3CCACE;
+        &__text{
+          font-weight: bold;
+          font-size: 24px;
+          line-height: 50px;
+          margin: 0 0 0 2px;
+          .limit{
+            color: #3CCACE;
+          }
         }
-      }
-      .list__description{
-        font-size: 18px;
-        line-height: 1.5;
-        margin: 16px 0 0;
+        &__description{
+          font-size: 18px;
+          line-height: 1.5;
+          margin: 16px 0 0;
+        }
       }
     }
   }

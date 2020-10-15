@@ -1,18 +1,45 @@
-%head 
-  %meta{"charset":"UTF-8"}
-  %title マイページ hurima スマホで簡単 フリマアプリ
-
-%body 
-  .Pc__header 
-    .Pc__header__inner
-      .Pc__header__top
-        %h1
-          %a{:href => "https://www.hurima.com/jp/"}
-            %img{:alt => "hurima", :height => "36", :src => "logo.png", :width => "134"}/
-        %form.Pc__header__form{:action => "https://www.hurima.com/jp/search/"}
-          %input.input__default{:name => "keyword", :placeholder => "何かお探しですか？", :type => "search", :value => ""}/
-          %i.icon__search
-  .Nav ナブ
-  .Main メイン
-  .Aside アサイド
-  .Footer フッター
+%body
+  .header
+    .header__inner
+      .header__top
+        %h1.hurima__icon
+        = link_to "#" do
+          = image_tag "logo.png", width: "134px", height: "34px"
+        %form.form{action: "#"}
+          %input.form__input{type: "search", name: "keyword", placeholder: "何かお探しですか？"}
+            = image_tag "icon-search 1.png", width: "40px", height: "40px"
+      .header__nav__box
+        %nav.left
+          %ul.left__nav
+            %li.category
+              %h2.category__h2 
+                = link_to "#" do
+                  = image_tag "icon_category.png", width: "15.03px", height: "12px"
+            %li.brand
+              %h2.brand__h2
+                =link_to "#" do
+                  = image_tag "icon_brand.png", width: "16.98px", height: "12px"
+        %nav.right
+          %ul.right__nav
+            %li.notice
+              %h2.bell
+                = link_to '#' do
+                  %i.far.fa-bell.fa-1.5x
+                  %span.bell__text お知らせ
+            %li.todo
+              %h2.check
+                = link_to '#' do
+                  %i.fas.fa-check.fa-1.5x
+                  %span.check__text やることリスト
+            %li.mypage
+              %h2.myimage
+                = link_to '#' do
+                  = image_tag "member_photo_noimage_thumb.png", width: "32px", height: "32px" 
+  .nav
+    .nav__contents
+      %li.nav__hurima
+        = link_to "#" do
+          %span.hurima__text フリマ
+          %i.fas.fa-angle-right.fa-1.5x
+      %li.nav__mypage
+        %span.mypage__text マイページ

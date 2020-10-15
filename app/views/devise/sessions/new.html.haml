@@ -1,0 +1,38 @@
+.AccountPage
+  .AccountPage__header
+    = image_tag "logo.png"
+
+  .SigninPage__main
+    .SigninPage__main__nothing
+      %p
+      アカウントをお持ちでない方はこちら
+      = link_to new_user_registration_path, class: "link-signup" do
+        新規会員登録
+
+    .SigninPage__main__sns
+      = link_to "#", class: "with-google btn-normal" do
+        = icon('fab', 'google', class: "icon-sns")
+        Googleでログイン
+      = link_to "#", class: "with-facebook btn-normal"  do
+        = icon('fab', 'facebook-square', class: "icon-sns")
+        Facabookでログイン
+        
+      = link_to "#", class: "with-apple btn-normal"  do
+        = icon('fab', 'apple', class: "icon-sns")
+        Appleでログイン
+
+    .SigninPage__main__form
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+
+        .SigninPage__main__form--content
+          .FormField
+            = f.email_field :email, placeholder: "メールアドレス", class: "FormField__input"
+
+          .FormField
+            = f.password_field :password, autocomplete: "off", placeholder: "パスワード", class: "FormField__input"
+
+          .actions
+            = f.submit "ログイン", class: 'Signin-button'
+            = link_to new_user_password_path, class:"forgot-password" do
+              パスワードをお忘れの方
+  .AccountPage__footer

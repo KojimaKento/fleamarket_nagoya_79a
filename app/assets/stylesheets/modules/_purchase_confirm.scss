@@ -27,7 +27,7 @@
 
 .content{
   background-color: rgb(245, 245, 245);
-  height: 300px;
+  min-height: 100%;
   display: inline-block;
   margin: 0px 360px;
 }
@@ -148,6 +148,59 @@
 .gazou{
   height: 80px;
   width: 80px;
+}
+
+/* 支払い金額 */
+@mixin money() {
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.money{
+  @include money();
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  &__price{
+    @include money();
+    font-size: 16px;
+  }
+}
+
+.select{
+  @include money();
+  font-size: 14px;
+  &__type{
+    cursor: not-allowed;
+  }
+  &__box{
+    color: #888;
+    cursor: default;
+    margin-right: 8px;
+    vertical-align: middle;
+    align-items: flex-start;
+    display: inline-flex;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  &__checkbox{
+    display: inline-block;
+    -moz-box-flex: 0;
+    flex: 0 0 auto;
+    height: 20px;
+    position: relative;
+    width: 20px;
+  }
+}
+
+.check-box{
+  background-color: #ccc;
+  border-color: #ccc;
+  cursor: default;
+  border-radius: 2px;
 }
 
 /* フッター */

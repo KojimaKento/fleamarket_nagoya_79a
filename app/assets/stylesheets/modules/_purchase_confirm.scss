@@ -118,41 +118,36 @@
   display: flex;
   -webkit-box-pack: justify;
   justify-content: space-between;
-}
-
-.images{
+  &__images{
   display: flex;
   -webkit-box-pack: center;
   justify-content: center;
   width: 80px;
   -webkit-box-align: center;
   align-items: center;
+  }
+  &__name{
+  font-size: 14px;
+  line-height: 1.4em;
+  margin-bottom: 8px;
+  margin-left: 16px;
+  }
+  &__price{
+  text-align: right;
+  }
+  &__tax{
+  font-size: 12px;
+  }
+  &__cost{
+  font-size: 15px;
+  font-weight: 600;
+  margin-left: 8px;
+  }
 }
 
 .gazou{
   height: 80px;
   width: 80px;
-}
-
-.name{
-  font-size: 14px;
-  line-height: 1.4em;
-  margin-bottom: 8px;
-  margin-left: 16px;
-}
-
-.price{
-  text-align: right;
-}
-
-.tax{
-  font-size: 12px;
-}
-
-.cost{
-  font-size: 15px;
-  font-weight: 600;
-  margin-left: 8px;
 }
 
 /* フッター */

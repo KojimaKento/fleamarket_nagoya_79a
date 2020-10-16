@@ -10,15 +10,18 @@
 
       .content3
         .purchase
-          .images
+          .purchase__images
             = link_to image_tag("logo/logo.png", class: "gazou"), "#"
-          .name
+          .purchase__name
             商品名
-            %p.price
-              %span.tax
+            %p.purchase__price
+              %span.purchase__tax
                 送料込み (税込)
-              %spam.cost
+              %spam.purchase__cost
                 ¥2,280
+
+      .content3
+        .money
 
 .footer
   .description

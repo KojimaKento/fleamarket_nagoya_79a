@@ -15,12 +15,18 @@
               %h2.category__h2 
                 = link_to "#" do
                   = image_tag "icon_category.png", width: "15.03px", height: "12px"
+              %span.category__text カテゴリーから探す
             %li.brand
               %h2.brand__h2
                 =link_to "#" do
                   = image_tag "icon_brand.png", width: "16.98px", height: "12px"
         %nav.right
           %ul.right__nav
+            %li.heart
+              %h2.iine
+                = link_to '#' do
+                  %i.far.fa-heart.fa-1.5x
+                  %span.iine__text いいね！一覧
             %li.notice
               %h2.bell
                 = link_to '#' do
@@ -43,3 +49,14 @@
           %i.fas.fa-angle-right.fa-1.5x
       %li.nav__mypage
         %span.mypage__text マイページ
+  .main
+    .main__content
+      .side
+        %ul.list
+          %li.list__mypage
+            = link_to '#' do
+              .list__mypage__text マイページ
+              %i.fas.fa-angle-right.fa-1.5x
+      .center
+  .banner
+  .footer

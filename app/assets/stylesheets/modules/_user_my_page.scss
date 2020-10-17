@@ -1,0 +1,221 @@
+* {
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  height: 100px;
+  .header__inner {
+    width: 1020px;
+    margin: 0 auto;
+    padding: 8px 0 0;
+    .header__top {
+      height: 40px;
+      display: flex;
+      .form {
+        position: relative;
+        margin-left: 45px;
+        width: 100%;
+        &__input {
+          width: 521px;
+          height: 40px;
+          background: #f5f5f5;
+          border-radius: 4px;
+          padding: 0 42px 0 10px;
+          width: 100%;
+          height: 40px;
+        }
+        .icon__search {
+          position: absolute;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          text-decoration: inherit;
+        }
+      }
+    }
+    .header__nav__box {
+      margin: 8px 0 0;
+      .left {
+        float: left;
+        height: 44px;
+        width: 307.25px;
+        &__nav {
+          font-size: 0;
+          display: flex;
+          .category {
+            height: 44px;
+            width: 159.38px;
+            display: flex;
+            &__h2 {
+              height: 44px;
+              .letter {
+                font-weight: 300;
+              }
+            }
+            &__text {
+              display: block;
+              font-weight: 700;
+              width: 125.45px;
+            }
+          }
+          .brand {
+            padding-right: 0;
+            height: 44px;
+            width: 147.88px;
+            &__h2 {
+              width: 136.88px;
+              height: 44px;
+            }
+          }
+        }
+      }
+      .right {
+        height: 44px;
+        width: 520.31px;
+        float: right;
+        &__nav {
+          height: 44px;
+          list-style: none;
+          display: flex;
+          .heart {
+            width: 127.61px;
+            padding: 0 7px;
+            .far.fa-heart {
+              color: #ccc;
+            }
+            .iine__text {
+              margin-left: 10px;
+              font-weight: 100;
+              color: black;
+              text-decoration: none;
+              display: block;
+            }
+          }
+          .notice {
+            width: 120px;
+            padding: 0 7px;
+            .far.fa-bell {
+              color: #ccc;
+            }
+            .bell__text {
+              margin-left: 10px;
+              font-weight: 200;
+              text-decoration: none;
+              color: black;
+              display: block;
+            }
+          }
+          .todo {
+            width: 120px;
+            padding: 0 7px;
+            .fas.fa-check {
+              color: #ccc;
+            }
+            .check__text {
+              margin-left: 10px;
+              font-weight: 100;
+              text-decoration: none;
+              color: black;
+              display: block;
+            }
+          }
+          .mypage {
+            width: 120px;
+            padding: 0 7px;
+          }
+        }
+      }
+    }
+  }
+}
+.nav {
+  position: relative;
+  border-top: 1px solid #eee;
+  background: #fff;
+  height: 49px;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  &__contents {
+    width: 700px;
+    height: 48px;
+    margin: 0 auto;
+    padding: 16px 0;
+    display: flex;
+    list-style: none;
+    .nav__hurima {
+      width: 80.95px;
+      height: 16px;
+      .hurima__text {
+        width: 56px;
+        height: 18px;
+        font-size: 14px;
+        color: black;
+        position: relative;
+      }
+      .fas.fa-angle-right {
+        margin: 0 8px;
+        color: #888;
+        position: absolute;
+      }
+    }
+    .nav__mypage {
+      width: 69.31px;
+      height: 16px;
+      font-weight: 600;
+      .mypage__text {
+        height: 18px;
+        width: 69.31px;
+        color: black;
+      }
+    }
+  }
+}
+.main {
+  height: 1341px;
+  background-color: #f5f5f5;
+  padding: 40px 60px 40px;
+  &__content {
+    height: 1341px;
+    .side {
+      width: 280px;
+      height: 1301px;
+      float: left;
+      .list {
+        list-style: none;
+        &__mypage {
+          width: 280px;
+          height: 48px;
+          background-color: #eee;
+          padding: 16px;
+          display: flex;
+          &__text {
+            display: block;
+            font-weight: 600;
+            font-size: 14px;
+            color: black;
+          }
+          .fas.fa-angle-right {
+            color: #333;
+            margin: 0 0 0 auto;
+          }
+        }
+      }
+    }
+    .center {
+      width: 700px;
+      height: 1189px;
+      float: right;
+    }
+  }
+}
+.banner {
+  height: 260px;
+  background: url(bg-mainVisual-pict_pc.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.footer {
+  height: 411px;
+  background-color: #212121;
+}

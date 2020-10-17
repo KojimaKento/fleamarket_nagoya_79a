@@ -197,10 +197,14 @@
 }
 
 .check-box{
-  background-color: #ccc;
+  background-color: #ffffff;
   border-color: #ccc;
   cursor: default;
   border-radius: 2px;
+  appearance: none;
+  border: 1px solid #ccc;
+  height: 100%;
+  position: absolute;
 }
 
 /* フッター */

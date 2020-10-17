@@ -30,7 +30,10 @@
           .select__type
             %span.select__box
               %span.select__checkbox
-                %input{:type => "checkbox", :class => "check-box"}
+                = form_with class: "check-box", method: :post, local: true do |form|
+                  = form.check_box :content
+                %svg{"aria-hidden" => "true", :fill => "#ffffff", "fill-rule" => "evenodd", :height => "16", :viewbox => "0 0 24 24", :width => "16"}
+
 
 .footer
   .description

@@ -26,8 +26,9 @@
 |birthday|date|null: false|
 |introduction|string||
 |avatar|string||
+|user|references|null: false, foreign_key: true|
 ### Association
-- has_one: user
+- belongs_to: user
 
 
 ## credit_cardsテーブル

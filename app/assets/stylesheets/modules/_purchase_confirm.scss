@@ -1,0 +1,343 @@
+/* ロゴ */
+@mixin title-bar() {
+  height: 128px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header{
+  @include title-bar();
+  background-color: rgb(245, 245, 245);
+  font-size: 36px;
+  text-decoration: none;
+}
+
+.title-bar{
+  @include title-bar();
+  background-color: rgb(245, 245, 245);
+  margin: 0px 360px;
+  width: 700px;
+  margin-right: 365px;
+}
+
+.floor{
+  background-color: rgb(245, 245, 245);
+}
+
+.content{
+  background-color: rgb(245, 245, 245);
+  min-height: 100%;
+  display: inline-block;
+  margin: 0px 360px;
+}
+
+.content2{
+  background-color: rgb(255, 255, 255);
+  width: 700px;
+  display: inline-block;
+}
+
+.content3{
+  display: block;
+  width: 375px;
+  background-color: rgb(255, 255, 255);
+  padding: 32px 16px;
+  margin: 0px auto;
+  border-bottom: 1px solid rgb(245, 245, 245);
+}
+
+.title{
+  width: 620px;
+  display: inline-block;
+  color:rgb(51, 51, 51);
+  box-sizing: border-box;
+}
+
+@mixin label() {
+  color: rgb(51, 51, 51);
+  font-size: 14px;
+  line-height: 1.4em;
+}
+
+.label{
+  @include label();
+  font-weight: 600;
+}
+
+.label2{
+  @include label();
+}
+
+@mixin tag() {
+  color: #fff;
+  margin-left: 2px;
+  font-size: 12px;
+  padding: 0 4px;
+  font-weight: 600;
+  border-radius: 2px;
+  display: inline-block;
+  font-style: normal;
+  line-height: 1.4em;
+}
+
+.tag{
+  @include tag();
+  background-color: #ff0211;
+}
+
+.tag2{
+  @include tag();
+  background-color: #bfbfbf;
+}
+
+.tag3{
+  font-size: 14px;
+  display: inline-block;
+  margin-left: 436px;
+}
+
+.tag4{
+  font-size: 14px;
+  display: inline-block;
+  margin-left: 508.5px;
+}
+
+/* 購入内容の確認 */
+.text{
+  color: rgb(51, 51, 51);
+  text-align: center;
+  margin: 0px auto;
+  font-size: 24px;
+  line-height: 34px;
+  font-weight: 600;
+}
+
+/* 購入内容 */
+.purchase{
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  &__images{
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  width: 80px;
+  -webkit-box-align: center;
+  align-items: center;
+  }
+  &__name{
+  font-size: 14px;
+  line-height: 1.4em;
+  margin-bottom: 8px;
+  margin-left: 16px;
+  }
+  &__price{
+  text-align: right;
+  }
+  &__tax{
+  font-size: 12px;
+  }
+  &__cost{
+  font-size: 15px;
+  font-weight: 600;
+  margin-left: 8px;
+  }
+}
+
+.gazou{
+  height: 80px;
+  width: 80px;
+}
+
+/* 支払い金額 */
+@mixin money() {
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.money{
+  @include money();
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  &__price{
+    @include money();
+    font-size: 16px;
+  }
+}
+
+/* ポイント */
+.select{
+  @include money();
+  font-size: 14px;
+  &__type{
+    cursor: not-allowed;
+  }
+  &__box{
+    color: #888;
+    cursor: default;
+    vertical-align: middle;
+    align-items: flex-start;
+    display: inline-flex;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  &__checkbox{
+    display: inline-block;
+    -moz-box-flex: 0;
+    flex: 0 0 auto;
+    height: 20px;
+    position: relative;
+    width: 20px;
+    margin-right: 8px;
+  }
+  &__text{
+    display: inline-block;
+    font-weight: 600;
+    line-height: 1.4em;
+    vertical-align: middle;
+    opacity: 0.5;
+    color: rgb(51, 51, 51);
+  }
+}
+
+.select2{
+  @include money();
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+.select3{
+  @include money();
+  margin-top: 16px;
+  font-size: 14px;
+  &__text{
+    display: inline-block;
+    font-weight: 600;
+    line-height: 1.4em;
+    vertical-align: middle;
+    opacity: 1;
+    color: rgb(51, 51, 51);
+  }
+}
+
+.check-box{
+  background-color: #ffffff;
+  border-color: #ccc;
+  cursor: default;
+  border-radius: 2px;
+  appearance: none;
+  border: 1px solid #ccc;
+  height: 100%;
+  position: absolute;
+}
+
+.icon{
+  height: 14px;
+  width: 14px;
+  margin-right: 4px;
+  opacity: 0.5;
+}
+
+.button1{
+  -webkit-box-align: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(234, 53, 45);
+  border-radius: 4px;
+  color: rgb(234, 53, 45);
+  display: inline-flex;
+  font-size: 14px;
+  font-weight: 600;
+  height: 32px;
+  -webkit-box-pack: center;
+  justify-content: center;
+  max-width: 164px;
+  pointer-events: auto;
+  width: 164px;
+}
+
+.point{
+  font-size: 12px;
+  height: 20px;
+}
+
+.explain{
+  font-size: 12px;
+  margin-top: 16px;
+  line-height: 1.5;
+}
+
+/* 支払い方法 */
+.method{
+  display: block;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  &__text{
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  &__entry{
+    font-size: 14px;
+    margin-left: 4px;
+    color: rgb(0, 149, 238);
+  }
+}
+
+/* フッター */
+.footer{
+  background-color: rgb(34, 34, 34);
+}
+
+.description{
+  background-color: rgb(245, 245, 245);
+  width: 100%;
+  height: 180px;
+  &__bar{
+    background-color: rgb(34, 34, 34);
+    height: 54px;
+    margin: 0px 365px 0px 360px;
+    text-align: center;
+    vertical-align: baseline;
+  }
+  &__list{
+    display: flex;
+    justify-content: center;
+  }
+  &__link{
+    text-decoration: none;
+    color: rgb(245, 245, 245);
+    margin: 16px 0px 0px 16px;
+    font-size: 12px;
+  }
+}
+
+.image{
+  background-color: rgb(34, 34, 34);
+  height: 128px;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 36px;
+  text-decoration: none;
+  margin: 0px 365px 0px 360px;
+  &__copyright{
+    font-size: 12px;
+    box-sizing: border-box;
+    color: rgb(245, 245, 245);
+  }
+}
+
+.logo{
+  width: 213px;
+  height: 62px;
+}
+

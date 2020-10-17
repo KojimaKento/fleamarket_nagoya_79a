@@ -37,9 +37,41 @@
                 = image_tag "icons/icon_brand.png", class: "icon"
               %p.select__text
                 dポイント
-              %label
-                
+          .button
+            = link_to "dアカウント連携", "#", class: "button1"
+        .select2
+          .select__type
+            %span.select__box
+              %span.select__checkbox
+                = form_with class: "check-box", method: :post, local: true do |form|
+                  = form.check_box :content
+                %svg{"aria-hidden" => "true", :fill => "#ffffff", "fill-rule" => "evenodd", :height => "16", :viewbox => "0 0 24 24", :width => "16"}
+              %p.select__icon
+                = image_tag "icons/icon_category.png", class: "icon"
+              %p.select__text
+                ポイント
+          %p.point
+            所持ポイント : P0
+        .select3
+          .select__type
+            %span.select__box
+              %span.select__checkbox
+                = form_with class: "check-box", method: :post, local: true do |form|
+                  = form.check_box :content
+                %svg{"aria-hidden" => "true", :fill => "#ffffff", "fill-rule" => "evenodd", :height => "16", :viewbox => "0 0 24 24", :width => "16"}
+              %p.select3__text
+                メルペイ残高の使用
+          %p.point
+            残高 : ¥85
+        .explain
+          同時に選択した場合、メルカリポイント → メルペイ残高の順でお支払いに適用されます
 
+      .content3
+        .method
+          .method__text
+            支払い方法
+          .method__entry
+            登録してください
 
 .footer
   .description

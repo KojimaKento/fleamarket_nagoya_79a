@@ -1,9 +1,14 @@
 @import "reset";
-@import "modules/user_my_page";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import "modules/index";
-@import "modules/index_top";
+
+@import "modules/check-purchase";
+@import "modules/devise";
+@import "modules/item-post";
+@import "modules/user_my-page";
+@import "modules/top-page";
+
+
 
 
 * {

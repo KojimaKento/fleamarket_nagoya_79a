@@ -1,32 +1,10 @@
-
-.top
-  .header
-    .header__main
-      = link_to image_tag("logo/logo.png", class:"header__main__icon"), "#"
-      .search
-        .box
-          %form{"accept-charset" => "UTF-8", :action => "#", :method => "get",class:"box_internal"}
-            %input#searchInput.searchBox--input{:name => "key", :placeholder => "キーワードから探す"}/
-          = link_to "#" do
-            %button{:type => "submit", class:"searchBox__icon"}
-              = image_tag "icon/icon-search 1.png",class:"bottom"
-    .nav
-      .listsleft
-        .listsleft__category
-          = link_to "カテゴリー", "#", class: "btn"
-        .listsleft__brand
-          = link_to "ブランド", "#", class: "btn" 
-      .listsright
-        .listsright__login
-          = link_to "ログイン", "#", class: "btn"
-        .listsright__sign-up
-          = link_to "新規会員登録", "#", class: "btn" 
-.main
-  .visual
-    .content
-      .content__subtitle
+= render partial: 'items/header'
+.top_main
+  .top_visual
+    .top_content
+      .top_content__subtitle
         人生を変えるフリマアプリ
-      .content__text
+      .top_content__text
         FURIMAはだれでもかんたんに出品・購入できる
         %br
         フリマアプリです
@@ -64,9 +42,9 @@
         %p.list__description 最大3%でお得に出品&購入！
   .topmibbledl
     .topmibbledl__iner
-      .sub
+      .topmibbledl__iner_sub
         会員数日本一位
-      .text
+      .topmibbledl__iner_text
         FURIMAは、フリマアプリで最も人気。
         %br
         出品・購入回数も業界最多です！
@@ -247,54 +225,7 @@
                     = icon('fas', 'star')
                     1
                 %p.tax （税込）
-.appbanner
-  .inner
-    .inner__title
-      だれでもかんたん、人生を変えるフリマアプリ
-    %p.inner__text 今すぐ無料ダウンロード！
-    .inner__btn
-      .abtn
-        =link_to image_tag("pict/app.png",class:"bottom editing"),"#"
-      =link_to image_tag("pict/google-play-badge.png",class:"gbtn bottom"),"#"
-.footer
-  .contents
-    .content
-      .content__head
-        FURIMAについて
-      %ul.content__details
-        %li.detail
-          = link_to "会社概要（運営会社）","#", class:"detail__list"
-          %br
-          = link_to "プライバシーポリシー","#", class:"detail__list"
-          %br
-          = link_to "FURIMA利用規約","#", class:"detail__list"
-          %br
-          = link_to "ポイントに関する特約","#", class:"detail__list"
-    .content
-      .content__head
-        FURIMAを見る
-      %ul.content__details
-        %li.detail
-          = link_to "カテゴリー一覧","#", class:"detail__list"
-          %br
-          = link_to "ブランド一覧","#", class:"detail__list"
-    .content
-      .content__head
-        ヘルプ＆ガイド
-      %ul.content__details
-        %li.detail
-          = link_to "FURIMAガイド","#", class:"detail__list"
-          %br
-          = link_to "FURIMAロゴ利用ガイドライン","#", class:"detail__list"
-          %br
-          = link_to "お知らせ","#", class:"detail__list"
-  .footer__logo
-    =link_to image_tag( "logo/logo-white.png", class:"image" ),"#"
-  %p.footer__copyright© FURIMA
-= link_to "#" do
-  .purchasebotn
-    %span.purchasebotn__text 出品する
-    = image_tag "icon/icon_camera.png",class:"purchasebotn__icon"
+= render partial: 'items/footer'
 
 
 

@@ -11,7 +11,7 @@
       .content3
         .purchase
           .purchase__images
-            = link_to image_tag("logo/logo.png", class: "gazou"), "#"
+            = link_to image_tag("icons/icon_category.png", class: "gazou"), "#"
           .purchase__name
             商品名
             %p.purchase__price
@@ -32,7 +32,6 @@
               %span.select__checkbox
                 = form_with class: "check-box", method: :post, local: true do |form|
                   = form.check_box :content
-                %svg{"aria-hidden" => "true", :fill => "#ffffff", "fill-rule" => "evenodd", :height => "16", :viewbox => "0 0 24 24", :width => "16"}
               %p.select__icon
                 = image_tag "icons/icon_brand.png", class: "icon"
               %p.select__text
@@ -45,7 +44,6 @@
               %span.select__checkbox
                 = form_with class: "check-box", method: :post, local: true do |form|
                   = form.check_box :content
-                %svg{"aria-hidden" => "true", :fill => "#ffffff", "fill-rule" => "evenodd", :height => "16", :viewbox => "0 0 24 24", :width => "16"}
               %p.select__icon
                 = image_tag "icons/icon_category.png", class: "icon"
               %p.select__text
@@ -58,7 +56,6 @@
               %span.select__checkbox
                 = form_with class: "check-box", method: :post, local: true do |form|
                   = form.check_box :content
-                %svg{"aria-hidden" => "true", :fill => "#ffffff", "fill-rule" => "evenodd", :height => "16", :viewbox => "0 0 24 24", :width => "16"}
               %p.select3__text
                 メルペイ残高の使用
           %p.point
@@ -67,24 +64,41 @@
           同時に選択した場合、メルカリポイント → メルペイ残高の順でお支払いに適用されます
 
       .content3
-        .method
-          .method__text
+        .section
+          .section__text
             支払い方法
-          .method__entry
-            登録してください
+          .section__icon
+            = link_to '#' do
+              = icon('fas', 'plus-circle')
+            .section__entry
+              = link_to '登録してください', '#'
 
-.footer
-  .description
-    .description__bar
-      %ul.description__list
-        %li.description__lists
-        = link_to 'プライバシー', '#', class: "description__link"
-        %li.description__lists
-        = link_to 'FURIMA利用規約', '#', class: "description__link"
-        %li.description__lists
-        = link_to '特定商取引に関する表記', '#', class: "description__link"
-    .image
-      %h1.app-title
-        = link_to image_tag("logo/logo-white.png", class: "logo"), "#"
-      %p.image__copyright
-        © FURIMA, Inc.
+      .content3
+        .section
+          .section__text
+            配送先
+          .section__icon
+            = link_to '#' do
+              = icon('fas', 'plus-circle')
+            .section__entry
+              = link_to '登録してください', '#'
+      
+      .content4
+        .purchase-button
+          = link_to "購入する", "#", class: "button2"
+
+
+.description
+  .description__bar
+    %ul.description__list
+      %li.description__lists
+      = link_to 'プライバシー', '#', class: "description__link"
+      %li.description__lists
+      = link_to 'FURIMA利用規約', '#', class: "description__link"
+      %li.description__lists
+      = link_to '特定商取引に関する表記', '#', class: "description__link"
+  .image
+    %h1.app-title
+      = link_to image_tag("logo/logo-white.png", class: "logo"), "#"
+    %p.image__copyright
+      © FURIMA, Inc.

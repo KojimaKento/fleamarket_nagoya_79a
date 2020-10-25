@@ -1,29 +1,8 @@
-.top
-  .header
-    .header__main
-      = link_to image_tag("logo/logo.png", class:"header__main__icon"), "#"
-      .search
-        .box
-          %form{"accept-charset" => "UTF-8", :action => "#", :method => "get",class:"box_internal"}
-            %input#searchInput.searchBox--input{:name => "key", :placeholder => "キーワードから探す"}/
-          = link_to "#" do
-            %button{:type => "submit", class:"searchBox__icon"}
-              = image_tag "icon/icon-search 1.png",class:"bottom"
-    .nav
-      .listsleft
-        .listsleft__category
-          = link_to "カテゴリー", "#", class: "btn"
-        .listsleft__brand
-          = link_to "ブランド",destroy_user_session_path, method: :delete, class: "btn" 
-      .listsright
-        .listsright__login
-          = link_to "ログイン",new_user_session_path , class: "btn"
-        .listsright__sign-up
-          = link_to "新規会員登録",new_user_registration_path , class: "btn" 
-.main
-  .visual
-    .content
-      .content__subtitle
+= render partial: 'items/header'
+.top_main
+  .top_visual
+    .top_content
+      .top_content__subtitle
         人生を変えるフリマアプリ
       .top_content__text
         FURIMAはだれでもかんたんに出品・購入できる

@@ -1,6 +1,6 @@
-.top{
+.top_top{
   padding: 0 60px;
-  .header{
+  .top_header{
     max-width: 1040px;
     width: 100%;
     min-height: 82px;
@@ -50,7 +50,7 @@
       font-size: 14px;
       display: flex;
       margin-bottom: 10px;
-      .listsleft{
+      &_listsleft{
         display: flex;
         &__category{
           padding-right: 32px;
@@ -62,7 +62,7 @@
           padding-right: 32px;
         }
       }
-      .listsright{
+      &_listsright{
         margin-left: auto;
         display: flex;
         &__login{

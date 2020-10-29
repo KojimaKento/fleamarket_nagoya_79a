@@ -1,10 +1,25 @@
-.header {
+
+@mixin right__text {
+  font-size: 13px;
+  font-weight: 700;
+  margin-left: 10px;
+  color: black;
+}
+
+@mixin left__text {
+  font-weight: 700;
+  font-size: 13px;
+  width: 125.45px;
+  color: black;
+}
+
+.mypage__header {
   height: 100px;
-  .header__inner {
+  &__inner {
     width: 1020px;
     margin: 0 auto;
     padding: 8px 0 0;
-    .header__top {
+    .mypage__header__top {
       height: 40px;
       display: flex;
       .form {
@@ -20,118 +35,59 @@
           width: 100%;
           height: 40px;
         }
-        .icon__search {
-          position: absolute;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
-          text-decoration: inherit;
-        }
       }
     }
-    .header__nav__box {
+    .mypage__header__nav__box {
       margin: 8px 0 0;
+      width: 1020px;
       .left {
         float: left;
-        height: 44px;
         width: 307.25px;
-        &__nav {
-          font-size: 0;
-          display: flex;
-          .category {
-            height: 44px;
-            width: 159.38px;
-            display: flex;
-            &__h2 {
-              height: 44px;
-              .letter {
-                font-weight: 300;
-              }
-            }
-            &__text {
-              display: block;
-              font-weight: 700;
-              width: 125.45px;
-            }
+        display: flex;
+          .category__text {
+            @include left__text()
           }
-          .brand {
-            padding-right: 0;
-            height: 44px;
-            width: 147.88px;
-            &__h2 {
-              width: 136.88px;
-              height: 44px;
-            }
-          }
+        .brand__text {
+          @include left__text()
         }
       }
       .right {
-        height: 44px;
         width: 520.31px;
         float: right;
-        &__nav {
-          height: 44px;
-          list-style: none;
-          display: flex;
-          .heart {
-            width: 127.61px;
-            padding: 0 7px;
-            .far.fa-heart {
-              color: #ccc;
-            }
-            .iine__text {
-              margin-left: 10px;
-              font-weight: 100;
-              color: black;
-              text-decoration: none;
-              display: block;
-            }
-          }
-          .notice {
-            width: 120px;
-            padding: 0 7px;
-            .far.fa-bell {
-              color: #ccc;
-            }
-            .bell__text {
-              margin-left: 10px;
-              font-weight: 200;
-              text-decoration: none;
-              color: black;
-              display: block;
-            }
-          }
-          .todo {
-            width: 120px;
-            padding: 0 7px;
-            .fas.fa-check {
-              color: #ccc;
-            }
-            .check__text {
-              margin-left: 10px;
-              font-weight: 100;
-              text-decoration: none;
-              color: black;
-              display: block;
-            }
-          }
-          .mypage {
-            width: 120px;
-            padding: 0 7px;
-          }
+        display: flex;
+        .far.fa-heart {
+          color: #ccc;
+        }
+        .heart__text {
+          @include right__text()
+        }
+        .far.fa-bell {
+          color: #ccc;
+        }
+        .bell__text {
+          @include right__text()
+        }
+        .fas.fa-check {
+          color: #ccc;
+        }
+        .check__text {
+          @include right__text()
+        }
+        .my__page__text {
+          @include right__text()
         }
       }
     }
   }
 }
-.nav {
+.mypage__nav {
   position: relative;
   border-top: 1px solid #eee;
   background: #fff;
   height: 49px;
   box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
   &__contents {
-    width: 700px;
+    width: 1020px;
     height: 48px;
     margin: 0 auto;
     padding: 16px 0;
@@ -165,7 +121,7 @@
     }
   }
 }
-.main {
+.mypage__main {
   height: 1341px;
   background-color: #f5f5f5;
   padding: 40px 60px 40px;
@@ -203,13 +159,13 @@
     }
   }
 }
-.banner {
+.mypage__banner {
   height: 260px;
   background: url(bg-mainVisual-pict_pc.jpg);
   background-position: center;
   background-size: cover;
 }
-.footer {
+.mypage__footer {
   height: 411px;
   background-color: #212121;
 }

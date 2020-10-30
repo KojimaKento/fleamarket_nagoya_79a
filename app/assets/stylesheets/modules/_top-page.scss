@@ -257,16 +257,16 @@
                 &__pay{
                   margin: 0;
                   padding: 0;
-                  // .fa{
-                  //   display: inline-block;
-                  //   font: normal normal normal 14px/1 FontAwesome;
-                  //   font-size: inherit;
-                  //   text-rendering: auto;
-                  //   -webkit-font-smoothing: antialiased;
-                  //   &::before {
-                  //     content: &#9733;
-                  //   }
-                  // }
+                  .fa{
+                    display: inline-block;
+                    font: normal normal normal 14px/1 FontAwesome;
+                    font-size: inherit;
+                    text-rendering: auto;
+                    -webkit-font-smoothing: antialiased;
+                    // &::before {
+                    //   content: &#9733;
+                    // }
+                  }
                 }
               }
               .tax{

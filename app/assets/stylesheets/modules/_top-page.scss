@@ -263,9 +263,9 @@
                     font-size: inherit;
                     text-rendering: auto;
                     -webkit-font-smoothing: antialiased;
-                    &::before {
-                      content: &#9733;
-                    }
+                    // &::before {
+                    //   content: &#9733;
+                    // }
                   }
                 }
               }

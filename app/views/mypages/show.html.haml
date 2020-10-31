@@ -1,0 +1,82 @@
+.mypage__header
+  .mypage__header__inner
+    .mypage__header__top
+      %h1.hurima__icon
+      = link_to "#" do
+        = image_tag "logo/logo.png", width: "134px", height: "34px"
+      %form.form{action: "#"}
+        %input.form__input{type: "search", name: "keyword", placeholder: "何かお探しですか？"}
+    .mypage__header__nav__box
+      %nav.left
+        .category
+          = link_to "#" do
+            = image_tag "icon_category.png", width: "15.03px", height: "12px"
+        = link_to "カテゴリーから探す", class: 'category__text'
+        .brand
+          = link_to "#" do
+            = image_tag "icon_brand.png", width: "16.98px", height: "12px"
+        = link_to "ブランドから探す", class: 'brand__text'
+      %nav.right
+        .heart
+          = link_to '#' do
+            = icon('far', 'heart')
+            %p.heart__text いいね！一覧
+        .notice
+          = link_to '#' do
+            = icon('far', 'bell')
+            %p.bell__text お知らせ
+        .todo
+          = link_to '#' do
+            = icon('fas', 'check')
+            %p.check__text やることリスト
+        .mypage
+          = link_to '#' do
+            = image_tag "member_photo_noimage_thumb.png", width: "20px", height: "20px" 
+            %p.my__page__text マイページ
+.mypage__nav
+  .mypage__nav__contents
+    .nav__hurima
+      = link_to "#" do
+        %p.hurima__text フリマ
+    .right__angle
+      = icon('fas', 'angle-right')
+    .nav__mypage
+      %p.mypage__text マイページ
+.mypage__main
+  .mypage__main__content
+    .side
+      .list__mypage
+        = link_to 'マイページ', class: 'list__text'
+        .list__right__angle
+          = icon('fas', 'angle-right')
+      .list__notice
+        = link_to 'お知らせ', class: 'list__text'
+      .list__todo
+        = link_to 'やることリスト', class: 'list__text'
+      .list__like
+        = link_to 'いいね！一覧', class: 'list__text'
+      .list__exhibit
+        = link_to '出品する', class: 'list__text'
+      .list__draft
+        = link_to '下書き一覧', class: 'list__text'
+      .list__under__exhibit
+        = link_to '出品した商品-出品中', class: 'list__text'
+      .list__during__trading
+        = link_to '出品した商品-取引中', class: 'list__text'
+      .list__soldout
+        = link_to '出品した商品-商売却済み', class: 'list__text'
+      .list__purchased__during__trading
+        = link_to '購入した商品-取引中', class: 'list__text'
+      .list__past__trading
+        = link_to '購入した商品-取引中', class: 'list__text'
+      .list__news
+        = link_to 'ニュース一覧', class: 'list__text'
+      .list__evaluation
+        = link_to '評価一覧', class: 'list__text'
+      .list__guide
+        = link_to 'ガイド', class: 'list__text'
+      .list__inquiry
+        = link_to 'お問い合わせ', class: 'list__text'
+    .center
+.mypage__banner
+.mypage__footer

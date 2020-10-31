@@ -94,33 +94,47 @@
     display: flex;
     list-style: none;
     .nav__hurima {
-      width: 80.95px;
       height: 16px;
+      padding: 0 8px 0 0;
       .hurima__text {
-        width: 56px;
         height: 18px;
         font-size: 14px;
         color: black;
         position: relative;
       }
-      .fas.fa-angle-right {
-        margin: 0 8px;
-        color: #888;
+      .right__angle {
         position: absolute;
+        .fas.fa-angle-right {
+          color: #ccc;
+        }
       }
     }
     .nav__mypage {
-      width: 69.31px;
       height: 16px;
       font-weight: 600;
+      padding: 0 0 0 8px;
       .mypage__text {
+        font-size: 14px;
         height: 18px;
-        width: 69.31px;
         color: black;
       }
     }
   }
 }
+
+@mixin list {
+  width: 280px;
+  height: 48px;
+  padding: 16px;
+  display: flex;
+  border-top: 1px solid #eee;
+  .list__text {
+    font-weight: 400;
+    font-size: 10px;
+    color: #212121;
+  }
+}
+
 .mypage__main {
   height: 1341px;
   background-color: #f5f5f5;
@@ -131,25 +145,80 @@
       width: 280px;
       height: 1301px;
       float: left;
-      .list {
-        list-style: none;
-        &__mypage {
-          width: 280px;
-          height: 48px;
-          background-color: #eee;
-          padding: 16px;
-          display: flex;
-          &__text {
-            display: block;
-            font-weight: 600;
-            font-size: 14px;
-            color: black;
-          }
-          .fas.fa-angle-right {
-            color: #333;
-            margin: 0 0 0 auto;
-          }
+      .list__mypage {
+        width: 280px;
+        height: 48px;
+        background-color: #eee;
+        padding: 16px;
+        display: flex;
+        .list__text {
+          font-weight: 600;
+          font-size: 14px;
+          color: black;
         }
+        .list__right__angle {
+          padding-right: 0px;
+        }
+      }
+      .list__notice {
+        background-color: white;
+        @include list()
+      }
+      .list__notice {
+        background-color: white;
+        @include list()
+      }
+      .list__todo {
+        background-color: white;
+        @include list()
+      }
+      .list__like {
+        background-color: white;
+        @include list()
+      }
+      .list__exhibit {
+        background-color: white;
+        @include list()
+      }
+      .list__draft {
+        background-color: white;
+        @include list()
+      }
+      .list__under__exhibit {
+        background-color: white;
+        @include list()
+      }
+      .list__during__trading {
+        background-color: white;
+        @include list()
+      }
+      .list__soldout {
+        background-color: white;
+        @include list()
+      }
+      .list__purchased__during__trading {
+        background-color: white;
+        @include list()
+      }
+      .list__past__trading {
+        background-color: white;
+        @include list()
+      }
+      .list__news {
+        background-color: white;
+        @include list()
+      }
+      .list__evaluation {
+        background-color: white;
+        @include list()
+      }
+      .list__guide {
+        background-color: white;
+        @include list()
+      }
+      .list__inquiry {
+        background-color: white;
+        @include list()
       }
     }
     .center {

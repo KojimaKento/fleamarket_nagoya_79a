@@ -17,7 +17,7 @@
   margin: 0px 365px 0px 360px;
   width: 700px;
 }
-.floor{
+.floor1{
   background-color: rgb(245, 245, 245);
 }
 .content1{
@@ -282,13 +282,13 @@
   margin-left: 130px;
   text-decoration: none;
 }
-.button1{
+.button-1{
   @include button();
   background    : #EA352D;     /* 背景色     */
   color         : #FFFFFF;     /* 文字色     */
   border        : 1px solid #EA352D;    /* 枠の指定 */
 }
-.button2{
+.button-2{
   @include button();
   background    : #ccc;     /* 背景色     */
   color         : #222;     /* 文字色     */
@@ -364,6 +364,6 @@
   width: 213px;
   height: 62px;
 }
-.floor-2{
+.floor2{
   background-color: rgb(34, 34, 34);
 }

@@ -6,14 +6,14 @@
   align-items: center;
 }
 
-.title-bar{
+.title-bar-1{
   @include title-bar();
   background-color: rgb(245, 245, 245);
   font-size: 36px;
   text-decoration: none;
 }
 
-.title-bar2{
+.title-bar-2{
   @include title-bar();
   background-color: rgb(255, 255, 255);
   margin: 0px 365px 0px 360px;

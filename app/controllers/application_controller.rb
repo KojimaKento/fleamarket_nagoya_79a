@@ -2,8 +2,13 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :basic_auth, if: :production?
 
+  def after_sign_in_path_for(resource)
+    user_path(resource.id)
+  end
 
   private
+
+
 
   def production?
     Rails.env.production?

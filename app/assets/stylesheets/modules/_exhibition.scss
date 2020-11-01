@@ -5,54 +5,45 @@
   justify-content: center;
   align-items: center;
 }
-
 .title-bar-1{
   @include title-bar();
   background-color: rgb(245, 245, 245);
   font-size: 36px;
   text-decoration: none;
 }
-
 .title-bar-2{
   @include title-bar();
   background-color: rgb(255, 255, 255);
   margin: 0px 365px 0px 360px;
   width: 700px;
 }
-
-.floor{
+.floor1{
   background-color: rgb(245, 245, 245);
 }
-
 .content1{
   background-color: rgb(245, 245, 245);
   height: 300px;
   display: inline-block;
   margin: 0px 360px;
 }
-
 .title{
   width: 620px;
   display: inline-block;
   color:rgb(51, 51, 51);
   box-sizing: border-box;
 }
-
 @mixin label() {
   color: rgb(51, 51, 51);
   font-size: 14px;
   line-height: 1.4em;
 }
-
 .label{
   @include label();
   font-weight: 600;
 }
-
 .label2{
   @include label();
 }
-
 @mixin tag() {
   color: #fff;
   margin-left: 2px;
@@ -64,29 +55,24 @@
   font-style: normal;
   line-height: 1.4em;
 }
-
 .tag{
   @include tag();
-  background-color: #ff0211;
+  background-color: #FF0211;
 }
-
 .tag2{
   @include tag();
-  background-color: #bfbfbf;
+  background-color: #BFBFBF;
 }
-
 .tag3{
   font-size: 14px;
   display: inline-block;
   margin-left: 436px;
 }
-
 .tag4{
   font-size: 14px;
   display: inline-block;
   margin-left: 508.5px;
 }
-
 /* 出品画像 */
 .exhibition{
   background-color: rgb(255, 255, 255);
@@ -125,7 +111,6 @@
     font-size: 12px;
   }
 }
-
 /* 商品名、商品の説明 */
 .goods{
   background-color: rgb(255, 255, 255);
@@ -147,7 +132,6 @@
     line-height: 1.4em;
   }
 }
-
 /* 商品名、商品の説明のフォーム */
 .form{
   margin-top: 16px;
@@ -167,7 +151,6 @@
     box-sizing: border-box;
   }
 }
-
 .form2{
   &__price{
     border: 1px solid #ccc;
@@ -178,7 +161,6 @@
     height: 48px;
   }
 }
-
 .moji{
   color: rgb(136, 136, 136);
   font-size: 14px;
@@ -187,7 +169,6 @@
   margin-bottom: 24px;
   display: flex;
 }
-
 /* 商品の詳細 */
 .details{
   background-color: rgb(255, 255, 255);
@@ -205,7 +186,6 @@
     margin-top: 32px;
   }
 }
-
 .select-name{
   width: 620px;
   padding: 0 56px 0 16px;
@@ -215,7 +195,6 @@
   border-radius: 5px;
   box-sizing: border-box;
 }
-
 /* 配送について */
 .delivery{
   background-color: rgb(255, 255, 255);
@@ -235,7 +214,6 @@
     margin-top: 32px;
   }
 }
-
 .icon{
   display: flex;
   margin-left: 5px;
@@ -243,7 +221,6 @@
     color:#1E90FF;
   }
 }
-
 /* 価格 */
 .price{
   background-color: rgb(255, 255, 255);
@@ -265,10 +242,10 @@
     padding: 12px 0px;
   }
   &__sen{
-    border-top-color: #efefef;
-    border-left: 0 solid #efefef;
-    border-bottom: 0 solid #efefef;
-    border-right: 0 solid #efefef;
+    border-top-color: #EFEFEF;
+    border-left: 0 solid #EFEFEF;
+    border-bottom: 0 solid #EFEFEF;
+    border-right: 0 solid #EFEFEF;
     border-top-style: solid;
     display: block;
     unicode-bidi: isolate;
@@ -283,14 +260,12 @@
     padding-top: 12px;
   }
 }
-
 .button{
   background-color: rgb(255, 255, 255);
   padding: 40px;
   width: 700px;
   display: inline-block;
 }
-
 @mixin button() {
   display       : inline-block;
   border-radius : 5px;          /* 角丸       */
@@ -307,22 +282,19 @@
   margin-left: 130px;
   text-decoration: none;
 }
-
-.button1{
+.button-1{
   @include button();
-  background    : #ea352d;     /* 背景色     */
-  color         : #ffffff;     /* 文字色     */
-  border        : 1px solid #ea352d;    /* 枠の指定 */
+  background    : #EA352D;     /* 背景色     */
+  color         : #FFFFFF;     /* 文字色     */
+  border        : 1px solid #EA352D;    /* 枠の指定 */
 }
-
-.button2{
+.button-2{
   @include button();
   background    : #ccc;     /* 背景色     */
   color         : #222;     /* 文字色     */
   border        : 1px solid #ccc;    /* 枠の指定 */
   margin-top: 24px;
 }
-
 .back{
   background-color: rgb(255, 255, 255);
   display: flex;
@@ -332,13 +304,11 @@
   width: auto;
   padding: 0px 155px;
 }
-
 .under-line{
   text-decoration: none;
-  color: #0095ee;
+  color: #0095EE;
   box-sizing: border-box;
 }
-
 .attention{
   background-color: rgb(255, 255, 255);
   width: 700px;
@@ -351,7 +321,6 @@
     word-break: keep-all;
   }
 }
-
 .description{
   background-color: rgb(245, 245, 245);
   width: 100%;
@@ -375,7 +344,6 @@
     font-size: 12px;
   }
 }
-
 .image{
   background-color: rgb(34, 34, 34);
   height: 128px;
@@ -392,13 +360,10 @@
     color: rgb(245, 245, 245);
   }
 }
-
 .logo{
   width: 213px;
   height: 62px;
 }
-
 .floor2{
   background-color: rgb(34, 34, 34);
 }
-

@@ -1,4 +1,4 @@
 class ExhibitionsController < ApplicationController
-  def create
+  def edit
   end
 end

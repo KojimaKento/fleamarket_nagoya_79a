@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'items#exhibitions'
+  root 'items#_exhibition'
   devise_for :users
   get 'mypages', to: 'mypages#show'
   get 'exhibitions', to: 'exhibitions#edit'

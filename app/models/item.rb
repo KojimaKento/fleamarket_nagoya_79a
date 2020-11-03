@@ -9,7 +9,13 @@ class Item < ApplicationRecord
   
   belongs_to :buyer, class_name: "User", foreign_key: "buyer_id", optional: true
   belongs_to :seller, class_name: "User", foreign_key: "seller_id"
+
+  has_many :item_images
+  accepts_nested_attributes_for :item_images, allow_destroy: true
   
+  validates_associated :item_images
+  validates :item_images, presence: true
+
   validates :name, presence: true
   validates :introduction, presence: true
   validates :price, presence: true

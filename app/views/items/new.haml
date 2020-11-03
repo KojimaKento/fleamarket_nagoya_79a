@@ -11,9 +11,12 @@
         %span.tag 必須
         .exhibition__sentence 最大10枚までアップロードできます
         .exhibition__photo
-        = f.fields_for :item_images do |i|
+          #image-box
+            = f.fields_for :item_images do |i|
+              .js-file_group{data: {index: i.index}}
+                = i.file_field :src, class: "js-file"
           .exhibition__icon
-            = i.file_field :src
+            
             = link_to '#' do
               = icon('fas', 'camera fa-lg')
           %p.exhibition__text

@@ -1,4 +1,3 @@
-/* ロゴ */
 @mixin title-bar() {
   height: 128px;
   display: flex;
@@ -6,7 +5,9 @@
   align-items: center;
 }
 .title-bar-1{
-  @include title-bar();
+  height: 128px;
+  justify-content: center;
+  align-items: center;
   background-color: rgb(245, 245, 245);
   font-size: 36px;
   text-decoration: none;
@@ -332,6 +333,7 @@
     margin: 0px 365px 0px 360px;
     text-align: center;
     vertical-align: baseline;
+    width: 700px;
   }
   &__list{
     display: flex;
@@ -354,6 +356,7 @@
   font-size: 36px;
   text-decoration: none;
   margin: 0px 365px 0px 360px;
+  width: 700px;
   &__copyright{
     font-size: 12px;
     box-sizing: border-box;
@@ -367,3 +370,4 @@
 .floor2{
   background-color: rgb(34, 34, 34);
 }
+

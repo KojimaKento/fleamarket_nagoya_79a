@@ -1,0 +1,136 @@
+.title-bar-1
+  .title-bar-2
+    = link_to image_tag("logo/logo.png", class: "logo"), "#"
+
+.floor1
+  .content1
+    = form_with model: @item, url:items_path, local: true do |f|
+      .exhibition
+        .title
+          %label.label 出品画像
+          %span.tag 必須
+          .exhibition__sentence 最大10枚までアップロードできます
+          .exhibition__photo
+            #image-box
+              = f.fields_for :item_images do |i|
+                .js-file_group{data: {index: i.index}}
+                  = i.file_field :src, class: "js-file"
+            .exhibition__icon
+              
+              = link_to '#' do
+                = icon('fas', 'camera fa-lg')
+            %p.exhibition__text
+              ドラッグアンドドロップ 
+              %br 
+              またはクリックしてファイルをアップロード
+
+      .goods
+        .title
+          %label.label 商品名
+          %span.tag 必須
+          = f.text_field :name, :placeholder => "40文字まで", class: 'form__name'
+        .goods__title
+          %label.label 商品の説明
+          %span.tag 必須
+          = f.text_area :introduction, :rows=>"7", :placeholder => "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例) 2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでオススメです。", class: 'form__explain'
+        .goods__count
+          0/1000
+      
+      .details
+        %p.moji 商品の詳細
+        .title
+          %label.label カテゴリー
+          %span.tag 必須
+        .details__name
+          = f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-name"})
+        .details__title
+          %label.label ブランド
+          %span.tag2 任意
+          = f.text_field :brand, :placeholder => "例）シャネル", class: 'form__name'
+        .details__title
+          %label.label 商品の状態
+          %span.tag 必須
+        .details__name
+          = f.collection_select(:condition_id, Condition.all, :id, :name, {}, {class:"select-name"})
+
+      .delivery
+        .moji
+          配送について 
+          .icon 
+            = link_to '#' do 
+              = icon('far', 'question-circle fa')
+        .title
+          %label.label 配送料の負担
+          %span.tag 必須
+        .delivery__name
+          = f.collection_select(:postage_id, Postage.all, :id, :name, {}, {class:"select-name"})
+        .delivery__title
+          %label.label 発送元の地域
+          %span.tag 必須
+        .delivery__name
+          = f.collection_select(:delivery_source_area_id, DeliverySourceArea.all, :id, :name, {}, {class:"select-name"})
+
+        .delivery__title
+          %label.label 発送までの日数
+          %span.tag 必須
+        .delivery__name
+          = f.collection_select(:shipping_date_id, ShippingDate.all, :id, :name, {}, {class:"select-name"})
+        
+      .price
+        .moji
+          価格（¥300〜9,999,999）
+          .icon 
+            = link_to '#' do 
+              = icon('far', 'question-circle fa')
+        .price__sale
+          .price__title
+            %label.label 販売価格
+            %span.tag 必須
+          .price__name
+            = f.text_field :price, :placeholder => "10000", class: 'form2__price'
+        .price__fee
+          .price__title
+            %label.label2 販売手数料（10%）
+          %span.tag3 ¥1,000
+          %hr.price__sen
+        .price__return
+          .price__title
+            %label.label2 販売利益
+          %span.tag4 ¥1,000
+
+      .button
+        = f.submit class: 'button-1'
+        = link_to "下書きに保存", "#", class: "button-2"
+        .back
+          = link_to 'もどる', '#', class: "under-line"
+      
+      .attention
+        %p.attention__content
+          禁止されている
+          = link_to '行為', '#', class: "under-line"
+          および
+          = link_to '出品物', '#', class: "under-line"
+          を必ずご確認ください。
+          = link_to '偽ブランド品', '#', class: "under-line"
+          や
+          = link_to '盗難物', '#', class: "under-line"
+          などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして
+          = link_to '加盟店規約', '#', class: "under-line"
+          に同意したことになります。
+
+.floor2   
+  .description
+    .description__bar
+      %ul.description__list
+        %li.description__lists
+        = link_to 'プライバシー', '#', class: "description__link"
+        %li.description__lists
+        = link_to 'FURIMA利用規約', '#', class: "description__link"
+        %li.description__lists
+        = link_to '特定商取引に関する表記', '#', class: "description__link"
+    .image
+      %h1.app-title
+        = link_to image_tag("logo/logo-white.png", class: "logo"), "#"
+      %p.image__copyright
+        © FURIMA, Inc.
+

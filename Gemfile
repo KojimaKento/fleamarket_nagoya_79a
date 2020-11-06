@@ -68,7 +68,6 @@ gem "haml-rails", ">= 1.0", '<= 2.0.1'
 
 gem 'font-awesome-sass'
 
-<<<<<<< HEAD
 gem 'devise'
 
 gem 'active_hash'
@@ -79,6 +78,3 @@ gem 'carrierwave'
 gem 'mini_magick'
 
 gem 'jquery-rails'
-=======
-gem 'devise'
->>>>>>> master

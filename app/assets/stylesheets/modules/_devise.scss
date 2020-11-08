@@ -99,6 +99,25 @@
   height: 220px;
 }
 
+.password-info-text {
+  margin: 8px 0 8px;
+  color: #888;
+  font-size: 14px;
+}
+
+input[type=checkbox] {
+  -ms-transform: scale(1.4, 1.4);
+  -webkit-transform: scale(1.4, 1.4);
+  transform: scale(1.4, 1.4);
+}
+
+.password-checkbox label {
+  padding: 0 0 0 8px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+
 // ログインページ
 
 .SigninPage__main {

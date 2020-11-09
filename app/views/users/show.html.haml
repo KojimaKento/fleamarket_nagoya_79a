@@ -7,76 +7,190 @@
       %form.form{action: "#"}
         %input.form__input{type: "search", name: "keyword", placeholder: "何かお探しですか？"}
     .mypage__header__nav__box
-      %nav.left
+      .left
         .category
           = link_to "#" do
-            = image_tag "icon_category.png", width: "15.03px", height: "12px"
-        = link_to "カテゴリーから探す", class: 'category__text'
+            = image_tag "icon_category.png", width: "16px", height: "13px"
+        .category__text
+          = link_to '#' do
+            %p.left__font カテゴリーから探す
         .brand
           = link_to "#" do
-            = image_tag "icon_brand.png", width: "16.98px", height: "12px"
-        = link_to "ブランドから探す", class: 'brand__text'
-      %nav.right
-        .heart
+            = image_tag "icon_brand.png", width: "17px", height: "12px"
+        .brand__text
           = link_to '#' do
+            %p.left__font ブランドから探す
+      %ul.right
+        %li.heart.right-info
+          = link_to '#', class: "right-link" do
             = icon('far', 'heart')
-            %p.heart__text いいね！一覧
-        .notice
-          = link_to '#' do
+            .heart__font いいね！一覧
+        %li.notice.right-info
+          = link_to '#', class: "right-link" do
             = icon('far', 'bell')
-            %p.bell__text お知らせ
-        .todo
-          = link_to '#' do
+            .notice__font お知らせ
+        %li.todo.right-info
+          = link_to '#', class: "right-link" do
             = icon('fas', 'check')
-            %p.check__text やることリスト
-        .mypage
-          = link_to '#' do
-            = image_tag "member_photo_noimage_thumb.png", width: "20px", height: "20px" 
-            %p.my__page__text マイページ
+            .todo__font やることリスト
+        %li.mypage.right-info
+          = link_to '#', class: "right-link" do
+            = image_tag "member_photo_noimage_thumb.png", width: "20px", height: "20px", class: "right-link-img" 
+            .mypage__font マイページ
 .mypage__nav
   .mypage__nav__contents
-    .nav__hurima
-      = link_to "#" do
+    .nav__furima
+      = link_to '#' do
         %p.hurima__text フリマ
     .right__angle
       = icon('fas', 'angle-right')
-    .nav__mypage
-      %p.mypage__text マイページ
+    .mypage__text マイページ
 .mypage__main
   .mypage__main__content
     .side
       .list__mypage
-        = link_to 'マイページ', class: 'list__text'
-        .list__right__angle
-          = icon('fas', 'angle-right')
+        = link_to '#' do
+          %P.list__mypage__text マイページ
       .list__notice
-        = link_to 'お知らせ', class: 'list__text'
+        = link_to '#' do
+          %P.list__text お知らせ
       .list__todo
-        = link_to 'やることリスト', class: 'list__text'
+        = link_to '#' do
+          %P.list__text やることリスト
       .list__like
-        = link_to 'いいね！一覧', class: 'list__text'
+        = link_to '#' do
+          %P.list__text いいね！一覧
       .list__exhibit
-        = link_to '出品する', new_item_path, class: 'list__text'
+        = link_to '/items/new' do
+          %P.list__text 出品する
       .list__draft
-        = link_to '下書き一覧', class: 'list__text'
+        = link_to '#' do
+          %P.list__text 下書き一覧
       .list__under__exhibit
-        = link_to '出品した商品-出品中', class: 'list__text'
+        = link_to '#' do
+          %P.list__text 出品した商品-出品中
       .list__during__trading
-        = link_to '出品した商品-取引中', class: 'list__text'
+        = link_to '#' do
+          %P.list__text 出品した商品-取引中
       .list__soldout
-        = link_to '出品した商品-商売却済み', class: 'list__text'
+        = link_to '#' do
+          %P.list__text 出品した商品ー売却済み
       .list__purchased__during__trading
-        = link_to '購入した商品-取引中', class: 'list__text'
+        = link_to '#' do
+          %P.list__text 購入した商品-取引中
       .list__past__trading
-        = link_to '購入した商品-取引中', class: 'list__text'
+        = link_to '#' do
+          %P.list__text 購入した商品-過去の取引
       .list__news
-        = link_to 'ニュース一覧', class: 'list__text'
+        = link_to '#' do
+          %P.list__text ニュース一覧
       .list__evaluation
-        = link_to '評価一覧', class: 'list__text'
+        = link_to '#' do
+          %P.list__text 評価一覧
       .list__guide
-        = link_to 'ガイド', class: 'list__text'
+        = link_to '#' do
+          %P.list__text ガイド
       .list__inquiry
-        = link_to 'お問い合わせ', class: 'list__text'
+        = link_to '#' do
+          %P.list__text お問い合わせ
+      .merupay メルペイ
+      .merupay__contents
+        .sales 
+          = link_to '#' do
+            %p.merupay__setting__text 売上・振込申請
+        .point 
+          = link_to '#' do
+            %p.merupay__setting__text ポイント
+      .setting 設定
+      .setting__contents
+        .profile 
+          = link_to '#' do
+            %p.merupay__setting__text プロフィール
+        .change__address 
+          = link_to '#' do
+            %p.merupay__setting__text 発送元・お届け先住所変更
+        .pay 
+          = link_to '/mypages/new' do
+            %p.merupay__setting__text 支払い方法
+        .mail__password 
+          = link_to '#' do
+            %p.merupay__setting__text メール/パスワード
+        .person__info 
+          = link_to '#' do
+            %p.merupay__setting__text 本人情報
+        .call__number 
+          = link_to '#' do
+            %p.merupay__setting__text 電話番号の確認
+        .logout 
+          = link_to '#' do
+            %p.merupay__setting__text ログアウト
     .center
-.mypage__banner
-.mypage__footer
+      .user__icon
+        .user__icon__content
+          .figure
+            = link_to '#' do
+              = image_tag "icon/member_photo_noimage_thumb.png", width: "60px", height: "60px"
+          .user__name 
+            = link_to do
+              .user__name__text コジマ
+          .evaluation__listings
+            .evaluation__listings__text
+              = link_to do
+                .evaluation__text 評価 0
+              = link_to do
+                .listings__text 出品数 0
+      .notice__todo__content
+        .notice__todo__text
+          .icon__notice 
+            = link_to '#' do
+              .icon__notice__text お知らせ
+          .icon__todo 
+            = link_to '#' do
+              .icon__todo__text やることリスト
+        .notice__contents
+          .notice__contents__first
+            .first
+              .first__icon
+                = link_to '#' do
+                  = icon('fas', 'box-open')
+              .first__text 《10/31まで!》ファミリマート・ローソンで使えるメルペイをチェック！
+          .notice__contents__second
+            .second
+              .second__icon
+                = link_to '#' do
+                  = icon('fas', 'box-open')
+              .second__text 【ポストにポン！】郵便ポストから発送できる配送方法が新登場！
+          .notice__contents__third
+            .third
+              .third__icon
+                = link_to '#' do
+                  = icon('fas', 'box-open')
+              .third__text 簡単操作で”必ず”P500ポイントもらえる！
+          .notice__contents__fourth
+            .fourth
+              .fourth__icon
+                = link_to '#' do
+                  = icon('fas', 'box-open')
+              .fourth__text
+          .notice__contents__fifth
+            .fifth
+              .fifth__icon
+                = link_to '#' do
+                  = icon('fas', 'box-open')
+              .fifth__text
+          .notice__contents__all-lists
+            .all-lists
+              = link_to '#' do
+                .all-lists__text 一覧を見る
+      .purchased__contents
+        .purchased__contents__tab 購入した商品
+        .trading__past-trade
+          .trading 
+            = link_to do
+              .trading__text 取引中
+          .past-trade 
+            = link_to do
+              .past-trade__text 過去の取引
+        .trading__past-trade__items
+          .trading__past-trade__text 取引中の商品はありません
+= render partial: 'items/footer'

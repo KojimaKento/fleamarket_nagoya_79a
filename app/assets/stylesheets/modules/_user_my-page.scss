@@ -1,16 +1,19 @@
 
 @mixin right__text {
+  margin-left: 22px;
   font-size: 13px;
-  font-weight: 700;
-  margin-left: 10px;
+  font-weight: 400;
   color: black;
+  line-height: 25px;
 }
 
 @mixin left__text {
-  font-weight: 700;
-  font-size: 13px;
   width: 125.45px;
-  color: black;
+  .left__font {
+    font-weight: 700;
+    font-size: 13px;
+    color: #212121;
+  }
 }
 
 .mypage__header {
@@ -30,10 +33,16 @@
           width: 521px;
           height: 40px;
           background: #f5f5f5;
+          border: solid 1px #efefef;
           border-radius: 4px;
           padding: 0 42px 0 10px;
           width: 100%;
           height: 40px;
+          .icon__search {
+            width: 40px;
+            height: 40px;
+            right: 0px;
+          }
         }
       }
     }
@@ -43,81 +52,114 @@
       .left {
         float: left;
         width: 307.25px;
+        padding: 10px 0;
         display: flex;
-          .category__text {
-            @include left__text()
-          }
+        .category {
+          width: 16px;
+          height: 13px;
+        }
+        .category__text {
+          margin-left: 8px;
+          @include left__text()
+        }
+        .brand {
+          width: 17px;
+          height: 12px;
+        }
         .brand__text {
+          margin-left: 8px;
           @include left__text()
         }
       }
       .right {
-        width: 520.31px;
+        height: 45px;
         float: right;
-        display: flex;
-        .far.fa-heart {
-          color: #ccc;
+        display: flex; 
+        &-info {
+          position: relative;
+          margin-left: 15px;
         }
-        .heart__text {
-          @include right__text()
+        &-link {
+          padding-top: 9px;
         }
-        .far.fa-bell {
-          color: #ccc;
+        .heart {
+          display: flex;
+          .far.fa-heart {
+            color: #ccc;
+            position: absolute;
+            top: 8px;
+            padding-top: 5px;
+          }
+          .heart__font {
+            @include right__text()
+          }
         }
-        .bell__text {
-          @include right__text()
+        .notice {
+          display: flex;
+          .far.fa-bell {
+            color: #ccc;
+            position: absolute;
+            top: 8px;
+            padding-top: 5px;
+          }
+          .notice__font {
+            @include right__text()
+          }
         }
-        .fas.fa-check {
-          color: #ccc;
+        .todo {
+          display: flex;
+          .fas.fa-check {
+            color: #ccc;
+            position: absolute;
+            top: 8px;
+            padding-top: 5px;
+          }
+          &__font {
+            @include right__text();
+          }
         }
-        .check__text {
-          @include right__text()
-        }
-        .my__page__text {
-          @include right__text()
+        .mypage {
+          display: flex;
+          .right-link-img {
+            color: #ccc;
+            position: absolute;
+            top: 8px;
+            padding-top: 5px;
+            margin-right: 3px;
+          }
+          &__font {
+            @include right__text();
+          }
         }
       }
     }
   }
 }
 .mypage__nav {
-  position: relative;
   border-top: 1px solid #eee;
   background: #fff;
   height: 49px;
   box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
   &__contents {
     width: 1020px;
-    height: 48px;
     margin: 0 auto;
     padding: 16px 0;
     display: flex;
-    list-style: none;
-    .nav__hurima {
-      height: 16px;
+    .hurima__text {
+      height: 18px;
       padding: 0 8px 0 0;
-      .hurima__text {
-        height: 18px;
-        font-size: 14px;
-        color: black;
-        position: relative;
-      }
-      .right__angle {
-        position: absolute;
-        .fas.fa-angle-right {
-          color: #ccc;
-        }
-      }
+      font-size: 14px;
+      color: black;
     }
-    .nav__mypage {
-      height: 16px;
+    .fas.fa-angle-right {
+      color: #ccc;
+    }
+    .mypage__text {
+      font-size: 14px;
       font-weight: 600;
+      height: 18px;
       padding: 0 0 0 8px;
-      .mypage__text {
-        font-size: 14px;
-        height: 18px;
-        color: black;
-      }
+      color: black;
     }
   }
 }
@@ -129,35 +171,89 @@
   display: flex;
   border-top: 1px solid #eee;
   .list__text {
-    font-weight: 400;
-    font-size: 10px;
+    font-size: 14px;
     color: #212121;
   }
+}
+
+@mixin merupay__setting {
+  height: 16px;
+  width: 280px;
+  margin-top: 40px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+@mixin merupay__setting__contents {
+  height: 97px;
+  width: 287px;
+  margin-top: 8px;
+}
+
+@mixin merupay__setting__lists {
+  height: 48px;
+  width: 280px;
+  padding: 16px;
+  background-color: #fff;
+  border-top: 1px solid #eee;
+  .merupay__setting__text {
+    font-size: 14px;
+    color: #212121;
+  }
+}
+
+@mixin notice__contents__list {
+  height: 80px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  padding: 0 16px;
+}
+
+@mixin notice__contents__icon {
+  background-color: #eee;
+  margin: 20px 15px;
+  width: 48px;
+  height: 48px;
+  position: relative;
+}
+
+@mixin icon__sizes {
+  position: absolute;
+  top: 8.5px;
+  left: 4.5px;
+  font-size: 2em;
+  color: #77EEFF;
+}
+
+@mixin notice__contents__texts {
+  font-size: 15px;
+  font-weight: 100;
+  margin: 30px 0 30px 10px;
 }
 
 .mypage__main {
   height: 1341px;
   background-color: #f5f5f5;
-  padding: 40px 60px 40px;
+  padding: 40px 60px;
   &__content {
     height: 1341px;
+    width: 1020px;
+    margin: 0 0 0 150px;
+    display: flex;
     .side {
       width: 280px;
       height: 1301px;
       float: left;
+      margin-right: 40px;
       .list__mypage {
-        width: 280px;
         height: 48px;
         background-color: #eee;
         padding: 16px;
         display: flex;
-        .list__text {
+        &__text {
           font-weight: 600;
           font-size: 14px;
           color: black;
-        }
-        .list__right__angle {
-          padding-right: 0px;
         }
       }
       .list__notice {
@@ -220,14 +316,276 @@
         background-color: white;
         @include list()
       }
+      .merupay {
+        height: 16px;
+        width: 280px;
+        margin-top: 40px;
+        font-size: 16px;
+        font-weight: 600;
+      }
+      .merupay__contents {
+        height: 97px;
+        width: 287px;
+        margin-top: 8px;
+        .sales {
+          @include merupay__setting__lists()
+        }
+        .point {
+          @include merupay__setting__lists()
+        }
+      }
+      .setting {
+        @include merupay__setting()
+      }
+      .setting__contents {
+        height: 97px;
+        width: 287px;
+        margin-top: 8px;
+        .profile {
+          @include merupay__setting__lists()
+        }
+        .change__address {
+          @include merupay__setting__lists()
+        }
+        .pay {
+          @include merupay__setting__lists()
+        }
+        .mail__password {
+          @include merupay__setting__lists()
+        }
+        .person__info {
+          @include merupay__setting__lists()
+        }
+        .call__number {
+          @include merupay__setting__lists()
+        }
+        .logout {
+          @include merupay__setting__lists()
+        }
+      }
     }
     .center {
       width: 700px;
       height: 1189px;
-      float: right;
+      .user__icon {
+        padding: 20px;
+        height: 200px;
+        background: url('/images/bg-topMiddleDl-pict.jpg');
+        background-position: center;
+        &__content {
+          height: 111px;
+          .figure {
+            margin: 0 300px 0 300px;
+          }
+          .user__name {
+            margin-top: 8px;
+            height: 19px;
+            text-align: center;
+            &__text {
+              font-weight: 600;
+              color: #212121;
+            }
+          }
+          .evaluation__listings {
+            margin-top: 8px;
+            height: 16px;
+            &__text {
+              display: flex;
+              margin: 0 260px 0 280px;
+              .evaluation__text {
+                font-size: 14px;
+                font-weight: 400;
+                color: #212121;
+              }
+              .listings__text {
+                font-size: 14px;
+                margin-left: 10px;
+                font-weight: 400;
+                color: #212121;
+              }
+            }
+          }
+        }
+      }
+      .notice__todo__content {
+        height: 567px;
+        .notice__todo__text {
+          height: 74px;
+          display: flex;
+          .icon__notice {
+            width: 350px;
+            background-color: #fff;
+            text-align: center;
+            padding-top: 25px;
+            border-top: 2px solid #ea352d;
+            &__text {
+              font-weight: 600;
+              font-size: 15px;
+              color: #212121;
+            }
+          }
+          .icon__todo {
+            width: 350px;
+            background-color: #efefef;
+            text-align: center;
+            padding-top: 25px;
+            &__text {
+              font-weight: 600;
+              font-size: 15px;
+              color: #212121;
+            }
+          }
+        }
+        .notice__contents {
+          height: 493px;
+          &__first {
+            @include notice__contents__list();
+            .first {
+              display: flex;
+              &__icon {
+                background-color: #eee;
+                margin: 20px 15px;
+                width: 48px;
+                height: 48px;
+                position: relative;
+                .fas.fa-box-open {
+                  position: absolute;
+                  top: 8.5px;
+                  left: 4.5px;
+                  font-size: 2em;
+                  color: #77EEFF;
+                }
+              }
+              .first__text {
+                font-size: 15px;
+                font-weight: 100;
+                margin: 30px 0 30px 10px;
+              }
+            }
+          }
+          &__second {
+            @include notice__contents__list();
+            .second {
+              display: flex;
+              &__icon {
+                @include notice__contents__icon();
+                .fas.fa-box-open {
+                  @include icon__sizes()
+                }
+              }
+              &__text {
+                @include notice__contents__texts()
+              }
+            }
+          }
+          &__third {
+            @include notice__contents__list();
+            .third {
+              display: flex;
+              &__icon {
+                @include notice__contents__icon();
+                .fas.fa-box-open {
+                  @include icon__sizes()
+                }
+              }
+              &__text {
+                @include notice__contents__texts()
+              }
+            }
+          }
+          &__fourth {
+            @include notice__contents__list();
+            .fourth {
+              display: flex;
+              &__icon {
+                @include notice__contents__icon();
+                .fas.fa-box-open {
+                  @include icon__sizes()
+                }
+              }
+            }
+          }
+          &__fifth {
+            @include notice__contents__list();
+            .fifth {
+              display: flex;
+              &__icon {
+                @include notice__contents__icon();
+                .fas.fa-box-open {
+                  @include icon__sizes()
+                }
+              }
+            }
+          }
+          &__all-lists {
+            @include notice__contents__list();
+            padding: 16px;
+            .all-lists {
+              background-color: #efefef;
+              width: 668px;
+              height: 48px;
+              text-align: center;
+              line-height: 40px;
+              &__text {
+                color: #212121;
+              }
+            }
+          }
+        }
+      }
+      .purchased__contents {
+        height: 382px;
+        margin: 40px 0 0;
+        &__tab {
+          height: 72px;
+          padding: 0 16px;
+          background-color: #fafafa;
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 72px;
+        }
+        .trading__past-trade {
+          height: 74px;
+          display: flex;
+          .trading {
+            width: 350px;
+            background-color: #fafafa;
+            border-top: 2px solid #ea352d;
+            text-align: center;
+            line-height: 72px;
+            &__text {
+              font-size: 16px;
+              font-weight: 600;
+              color: #212121;
+            }
+          }
+          .past-trade {
+            width: 350px;
+            background-color: #efefef;
+            text-align: center;
+            line-height: 72px;
+            &__text {
+              font-size: 16px;
+              font-weight: 600;
+              color: #212121;
+            }
+          }
+        }
+        .trading__past-trade__items {
+          height: 236px;
+          background-color: #fafafa;
+          .trading__past-trade__text {
+            padding: 160px 0 60px;
+            font-size: 16px;
+            text-align: center;
+            color: #ccc;
+          }
+        }
+      }
     }
   }
 }
+
 .mypage__banner {
   height: 260px;
   background: url('/images/bg-mainVisual-pict_pc.jpg');

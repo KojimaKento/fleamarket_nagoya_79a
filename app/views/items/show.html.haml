@@ -1,0 +1,21 @@
+= render partial: 'items/header'
+.show_main
+  .show_main_main
+    .contentLeftpp
+    .contentRight
+      .contentRight_content
+        .itemBox
+          .itemBox_name
+            テスト
+          .itemBox_body
+            %ul.Product
+              %li.product
+                = image_tag "pict/beef.png", class:"product_photo"
+                %ul.Mini
+                  .mini
+                    = image_tag "pict/beef.png", class:"mini_photo"
+          .itemBox_price
+            %spen.itemBox_price_pay ¥10000
+          .itemDetail
+            テスト
+= render partial: 'items/footer'

@@ -586,6 +586,202 @@
   }
 }
 
+.credit-card__registration {
+  width: 700px;
+  height: 663px;
+  background-color: white;
+  &__text {
+    height: 99px;
+    padding: 32px 16px;
+    background-color: white;
+    font-size: 23px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+  .credit__form {
+    height: 564px;
+    padding: 0px 178px;
+    .registration__contents {
+      width: 343px;
+      height: 564px;
+      padding: 32px 0 48px 0;
+      .card__number {
+        height: 113px;
+        &__text {
+          display: flex;
+          .number__text {
+            font-size: 14px;
+            font-weight: 600;
+          }
+          .must__number {
+            margin-left: 8px;
+            background-color: red;
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+            border-radius: 2px;
+            padding: 0 4px;
+          }
+        }
+        .numbers__text {
+          height: 48px;
+          margin-top: 16px;
+          width: 100%;
+          border: solid 1px #eee;
+          border-radius: 4px;
+        }
+        &__company {
+          height: 25px;
+          display: flex;
+          .logo__visa {
+            height: 14px;
+            width: 44px;
+            margin: 5px;
+          }
+          .logo__mastercard {
+            width: 44px;
+            margin: 5px;
+          }
+          .logo__diners {
+            width: 44px;
+            margin: 5px;
+          }
+        }
+      }
+      .expiration__date {
+        height: 83px;
+        width: 343px;
+        margin-top: 28px;
+        &__text {
+          display: flex;
+          .date__text {
+            font-size: 14px;
+            font-weight: 600;
+          }
+          .must__number {
+            margin-left: 8px;
+            background-color: red;
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+            border-radius: 2px;
+            padding: 0 4px;
+          }
+        }
+        &__contents {
+          height: 48px;
+          margin-top: 16px;
+          display: flex;
+          .month__date {
+            height: 48px;
+            width: 134px;
+            border: solid 1px #eee;
+            border-radius: 4px;
+          }
+          .month__text {
+            width: 46px;
+            text-align: center;
+            line-height: 48px;
+          }
+          .year__date {
+            height: 48px;
+            width: 134px;
+            border: solid 1px #eee;
+            border-radius: 4px;
+            padding: 0 56px 0 16px;
+          }
+          .year__text {
+            width: 30px;
+            text-align: right;
+            line-height: 48px;
+          }
+        }
+      }
+      .security__code {
+        height: 106px;
+        margin-top: 28px;
+        &__text {
+          display: flex;
+          height: 19px;
+          .code__text {
+            font-size: 14px;
+            font-weight: 600;
+          }
+          .must__number {
+            margin-left: 8px;
+            background-color: red;
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+            border-radius: 2px;
+            padding: 0 4px;
+          }
+        }
+        &__contents {
+          height: 48px;
+          margin-top: 16px;
+          .security__code__numbers {
+            height: 48px;
+            width: 100%;
+            border: solid 1px #eee;
+            border-radius: 4px;
+          }
+        }
+        &__backnumber {
+          height: 15px;
+          margin-top: 8px;
+          display: flex;
+          &__question {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: rgb(0, 149, 238);
+            color: rgb(255, 255, 255);
+            line-height: 14px;
+            font-size: 12px;
+            text-align: center;
+            cursor: pointer;
+          }
+          &__text {
+            color: rgb(0, 149, 238);
+            line-height: 14px;
+            font-size: 12px;
+            cursor: pointer;
+          }
+        }
+      }
+      .add__button {
+        margin-top: 24px;
+        height: 46px;
+        padding: 0 24px;
+        background-color: #ea352d;
+        width: 100%;
+        border-radius: 4px;
+        border: 1px solid transparent;
+        cursor: pointer;
+        color: #fff;
+        font-size: 17px;
+        font-weight: 600;
+        padding: 0 24px;
+        text-align: center;
+      }
+      .back__text {
+        margin-top: 32px;
+        height: 14px;
+        text-align: center;
+        color: #0095ee;
+        width: 100%;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+
+
+
 .mypage__banner {
   height: 260px;
   background: url('/images/bg-mainVisual-pict_pc.jpg');

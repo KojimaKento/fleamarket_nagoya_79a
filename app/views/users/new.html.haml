@@ -49,7 +49,7 @@
   .mypage__main__content
     .side
       .list__mypage
-        = link_to '#' do
+        = link_to '/users/show' do
           %P.list__mypage__text マイページ
       .list__notice
         = link_to '#' do
@@ -125,72 +125,43 @@
           = link_to '#' do
             %p.merupay__setting__text ログアウト
     .center
-      .user__icon
-        .user__icon__content
-          .figure
-            = link_to '#' do
-              = image_tag "icon/member_photo_noimage_thumb.png", width: "60px", height: "60px"
-          .user__name 
-            = link_to do
-              .user__name__text コジマ
-          .evaluation__listings
-            .evaluation__listings__text
-              = link_to do
-                .evaluation__text 評価 0
-              = link_to do
-                .listings__text 出品数 0
-      .notice__todo__content
-        .notice__todo__text
-          .icon__notice 
-            = link_to '#' do
-              .icon__notice__text お知らせ
-          .icon__todo 
-            = link_to '#' do
-              .icon__todo__text やることリスト
-        .notice__contents
-          .notice__contents__first
-            .first
-              .first__icon
-                = link_to '#' do
-                  = icon('fas', 'box-open')
-              .first__text 《10/31まで!》ファミリマート・ローソンで使えるメルペイをチェック！
-          .notice__contents__second
-            .second
-              .second__icon
-                = link_to '#' do
-                  = icon('fas', 'box-open')
-              .second__text 【ポストにポン！】郵便ポストから発送できる配送方法が新登場！
-          .notice__contents__third
-            .third
-              .third__icon
-                = link_to '#' do
-                  = icon('fas', 'box-open')
-              .third__text 簡単操作で”必ず”P500ポイントもらえる！
-          .notice__contents__fourth
-            .fourth
-              .fourth__icon
-                = link_to '#' do
-                  = icon('fas', 'box-open')
-              .fourth__text
-          .notice__contents__fifth
-            .fifth
-              .fifth__icon
-                = link_to '#' do
-                  = icon('fas', 'box-open')
-              .fifth__text
-          .notice__contents__all-lists
-            .all-lists
-              = link_to '#' do
-                .all-lists__text 一覧を見る
-      .purchased__contents
-        .purchased__contents__tab 購入した商品
-        .trading__past-trade
-          .trading 
-            = link_to do
-              .trading__text 取引中
-          .past-trade 
-            = link_to do
-              .past-trade__text 過去の取引
-        .trading__past-trade__items
-          .trading__past-trade__text 取引中の商品はありません
+      .credit-card__registration
+        .credit-card__registration__text クレジットカード情報入力
+        %form.credit__form
+          .registration__contents
+            .card__number
+              .card__number__text 
+                .number__text カード番号
+                .must__number 必須
+              %input.numbers__text{type: "text", placeholder: "半角数字のみ"}
+              .card__number__company
+                .logo__visa
+                  = link_to '#' do
+                    = image_tag 'logo/logo_visa.gif', alt: 'visa', height: '25px'
+                .logo__mastercard
+                  = link_to '#' do
+                    = image_tag 'logo/logo_mastercard.gif', alt: 'mastercard', height: '25px'
+                .logo__diners
+                  = link_to '#' do
+                    = image_tag 'logo/diners_logo_white.gif', alt: 'diners', height: '25px'
+            .expiration__date
+              .expiration__date__text
+                .date__text 有効期限
+                .must__number 必須
+              .expiration__date__contents
+                %input.month__date{type: "text"}
+                .month__text 月
+                %input.year__date{type: "text"}
+                .year__text 年
+            .security__code
+              .security__code__text
+                .code__text セキュリティーコード
+                .must__number 必須
+              .security__code__contents
+                %input.security__code__numbers{type: "text", placeholder: "カード背面4桁もしくは3桁の番号"}
+              .security__code__backnumber
+                .security__code__backnumber__question ?
+                .security__code__backnumber__text カード裏面の番号とは？
+            %button.add__button{type: "submit"} 追加する
+            .back__text もどる
 = render partial: 'items/footer'

@@ -69,6 +69,8 @@
             相手のことを考え丁寧なコメントを心がけましょう。
             %br
             不快な言葉遣いなどは利用制限や退会処分となることがあります。
+          = form_with url: "/posts", method: :post, local: true do |form|
+            = form.text_area :content, size: "70.5x4", class: "formTextArea"
           = link_to "#" do
             %button{:type => "submit", class:"commentBtn"}
               = icon('fas', 'comment')

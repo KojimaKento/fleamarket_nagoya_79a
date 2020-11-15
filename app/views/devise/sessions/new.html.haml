@@ -35,4 +35,20 @@
             = f.submit "ログイン", class: 'Signin-button'
             = link_to new_user_password_path, class:"forgot-password" do
               パスワードをお忘れの方
-  .AccountPage__footer
+
+              
+    .AccountPage__footer
+      .AccountPage__footer__top
+        %ul.AccountPage__footer__lists
+          %li
+          = link_to 'プライバシー', '#', class: "AccountPage__footer__lists__link"
+          %li
+          = link_to 'FURIMA利用規約', '#', class: "AccountPage__footer__lists__link"
+          %li
+          = link_to '特定商取引に関する表記', '#', class: "AccountPage__footer__lists__link"
+      .AccountPage__footer__image
+        %h1.app-title
+          = link_to image_tag("logo/logo-white.png", class: "logo"), "#"
+        %p.AccountPage__footer__image__copyright
+          © FURIMA, Inc.
+

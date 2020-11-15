@@ -152,6 +152,17 @@ a{
             margin: 10px 0;
             text-align: left;
           }
+          .formTextArea{
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            min-height: 104px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background: #fff;
+            font-size: 16px;
+            line-height: 1.5;
+          }
           .commentBtn{
             line-height: 48px;
             background: #3CCACE;
@@ -160,7 +171,12 @@ a{
             width: 60%;
             font-size: 18px;
             border-radius: 100px;
-            margin-top: 30px;
+            margin-top: 10px;
+            cursor: pointer;
+          }
+          .commentBtn:hover{
+            opacity: 0.7;
+            transition: 0.5s;
           }
         }
       }

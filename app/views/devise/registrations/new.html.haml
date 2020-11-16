@@ -36,15 +36,15 @@
               = p.label :first_name, "お名前(全角)", class: "FormField__label"
               %span.form-require 必須
               .ProfileNew
-                = p.text_field :first_name, class: "FormField__input ProfileNew__form"
-                = p.text_field :last_name, class: "FormField__input ProfileNew__form"
+                = p.text_field :first_name, placeholder: "例)山田", class: "FormField__input ProfileNew__form"
+                = p.text_field :last_name, placeholder: "例)彩", class: "FormField__input ProfileNew__form"
 
               .FormField
                 = p.label :last_name, "お名前カナ(全角)", class: "FormField__label"
                 %span.form-require 必須
                 .ProfileNew
-                  = p.text_field :first_name_kana, class: "FormField__input ProfileNew__form"
-                  = p.text_field :last_name_kana, class: "FormField__input ProfileNew__form"
+                  = p.text_field :first_name_kana, placeholder: "例)ヤマダ", class: "FormField__input ProfileNew__form"
+                  = p.text_field :last_name_kana, placeholder: "例)アヤ", class: "FormField__input ProfileNew__form"
 
               .FormField
                 = p.label :birthday, "生年月日", class: "FormField__label"

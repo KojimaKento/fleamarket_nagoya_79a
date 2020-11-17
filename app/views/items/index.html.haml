@@ -83,7 +83,7 @@
           - @items.each do |item|
             - if  item.seller_id != current_user.id
               .probuctbox__product
-                = link_to "/items/#{item.id}", class:"photos" do
+                = link_to item_path(item.id), class:"photos" do
                   = image_tag item.item_images[0].src.url, class:"photos_photo"
                   .photos__body
                     .photos__body__name
@@ -106,7 +106,7 @@
           - @items.each do |item|
             - if  item.seller_id == current_user.id
               .probuctbox__product
-                = link_to "/items/#{item.id}", class:"photos" do
+                = link_to item_path(item.id), class:"photos" do
                   = image_tag item.item_images[0].src.url, class:"photos_photo"
                   .photos__body
                     .photos__body__name
@@ -129,7 +129,7 @@
         .probuctbox__listss
           - @items.each do |item|
             .probuctbox__product
-              = link_to "/items/#{item.id}", class:"photos" do
+              = link_to item_path(item.id), class:"photos" do
                 = image_tag item.item_images[0].src.url, class:"photos_photo"
                 .photos__body
                   .photos__body__name

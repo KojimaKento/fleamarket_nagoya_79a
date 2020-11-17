@@ -62,7 +62,7 @@
       = link_to '#' do
         %p.merupay__setting__text 発送元・お届け先住所変更
     .pay 
-      = link_to '/users/:id/credit' do
+      = link_to credit_users_path(@user) do
         %p.merupay__setting__text 支払い方法
     .mail__password 
       = link_to '#' do
@@ -74,5 +74,5 @@
       = link_to '#' do
         %p.merupay__setting__text 電話番号の確認
     .logout 
-      = link_to "/users/:id/logout" do
+      = link_to logout_users_path(@user) do
         %p.merupay__setting__text ログアウト

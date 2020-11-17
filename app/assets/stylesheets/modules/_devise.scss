@@ -46,7 +46,7 @@
 
 .FormField {
   &:not(:first-of-type) {
-    margin-top: 32px;
+    margin-top: 28px;
   }
   &__label{
     font-size: 14px;
@@ -95,9 +95,58 @@
   @include account-btn();
 }
 
-.AccountPage__footer {
-  height: 220px;
+.password-info-text {
+  margin: 8px 0 8px;
+  color: #888;
+  font-size: 14px;
 }
+
+input[type=checkbox] {
+  -ms-transform: scale(1.4, 1.4);
+  -webkit-transform: scale(1.4, 1.4);
+  transform: scale(1.4, 1.4);
+}
+
+.password-checkbox label {
+  padding: 0 0 0 8px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.confirmation-title {
+  font-size: 16px;
+  color: #333;
+  font-weight: bold;
+}
+
+.confirmation-text {
+  padding: 8px 0 0;
+  font-size: 14px;
+  color: #333;
+}
+.ProfileNew {
+  display: flex;
+}
+
+.ProfileNew__form:first-of-type {
+  margin-right: 15px;
+}
+
+.year, .month, .day {
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  cursor: pointer;
+  width: 100%;
+}
+.birthday-line {
+  align-items: center;
+}
+
 
 // ログインページ
 
@@ -203,4 +252,38 @@
 
 .Password-button {
   @include account-btn();
+}
+
+.AccountPage__footer {
+  &__top{
+    background-color: #f5f5f5;
+    height: 54px;
+    text-align: center;
+    vertical-align: baseline;
+  }
+  &__lists{
+    display: flex;
+    justify-content: center;
+    &__link{
+      text-decoration: none;
+      color: black;
+      margin: 16px 0px 0px 16px;
+      font-size: 12px;
+    }
+  }
+  &__image{
+    background-color: #f5f5f5;
+    height: 128px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 36px;
+    text-decoration: none;
+    &__copyright{
+      font-size: 12px;
+      box-sizing: border-box;
+      color:black;
+    }
+  }
 }

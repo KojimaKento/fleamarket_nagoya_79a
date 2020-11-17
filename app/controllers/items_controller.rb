@@ -2,6 +2,10 @@ class ItemsController < ApplicationController
   def index
   end
 
+  def show
+    #@item = Item.find(params[:id])
+  end
+
   def new
     @item = Item.new
     @item.item_images.new
@@ -14,6 +18,22 @@ class ItemsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    item = Item.find(params[:id])
+    item.update(item_params)
+    redirect_to item_path(item.id)
+  end
+
+  def destroy
+    item = Item.find(params[:id])
+    item.destroy
+    redirect_to root_path
   end
 
   private

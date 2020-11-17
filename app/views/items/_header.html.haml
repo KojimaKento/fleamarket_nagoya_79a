@@ -1,7 +1,7 @@
 .top_top
   .top_header
     .top_header__main
-      = link_to image_tag("logo/logo.png", class:"top_header__main__icon"), "#"
+      = link_to image_tag("logo/logo.png", class:"top_header__main__icon"),items_path
       .search
         .box
           %form{"accept-charset" => "UTF-8", :action => "#", :method => "get",class:"box_internal"}
@@ -13,7 +13,7 @@
       .nav_1_listsleft
         .nav_1_listsleft__category
           = link_to "カテゴリー", "#", class: "btn"
-        .nav_1_listsleft__brand
+        .nav_1_listsleft__brand                             
           = link_to "ブランド", destroy_user_session_path, class: "btn" 
       - if user_signed_in?
         .nav_1_listsright

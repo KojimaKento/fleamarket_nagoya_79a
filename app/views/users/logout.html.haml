@@ -1,0 +1,11 @@
+= render "header"
+.mypage__main
+  .mypage__main__content
+    = render "side"
+
+    .center
+      %form.logout
+        .logout__content
+          %button.logout__button{type: "submit"} ログアウト
+
+= render partial: 'items/footer'

@@ -1,0 +1,78 @@
+
+.side
+  .list__mypage
+    = link_to '/users/show' do
+      %P.list__mypage__text マイページ
+  .list__notice
+    = link_to '#' do
+      %P.list__text お知らせ
+  .list__todo
+    = link_to '#' do
+      %P.list__text やることリスト
+  .list__like
+    = link_to '#' do
+      %P.list__text いいね！一覧
+  .list__exhibit
+    = link_to '/items/new' do
+      %P.list__text 出品する
+  .list__draft
+    = link_to '#' do
+      %P.list__text 下書き一覧
+  .list__under__exhibit
+    = link_to '#' do
+      %P.list__text 出品した商品-出品中
+  .list__during__trading
+    = link_to '#' do
+      %P.list__text 出品した商品-取引中
+  .list__soldout
+    = link_to '#' do
+      %P.list__text 出品した商品ー売却済み
+  .list__purchased__during__trading
+    = link_to '#' do
+      %P.list__text 購入した商品-取引中
+  .list__past__trading
+    = link_to '#' do
+      %P.list__text 購入した商品-過去の取引
+  .list__news
+    = link_to '#' do
+      %P.list__text ニュース一覧
+  .list__evaluation
+    = link_to '#' do
+      %P.list__text 評価一覧
+  .list__guide
+    = link_to '#' do
+      %P.list__text ガイド
+  .list__inquiry
+    = link_to '#' do
+      %P.list__text お問い合わせ
+  .merupay メルペイ
+  .merupay__contents
+    .sales 
+      = link_to '#' do
+        %p.merupay__setting__text 売上・振込申請
+    .point 
+      = link_to '#' do
+        %p.merupay__setting__text ポイント
+  .setting 設定
+  .setting__contents
+    .profile 
+      = link_to '#' do
+        %p.merupay__setting__text プロフィール
+    .change__address 
+      = link_to '#' do
+        %p.merupay__setting__text 発送元・お届け先住所変更
+    .pay 
+      = link_to '/users/:id/credit' do
+        %p.merupay__setting__text 支払い方法
+    .mail__password 
+      = link_to '#' do
+        %p.merupay__setting__text メール/パスワード
+    .person__info 
+      = link_to '#' do
+        %p.merupay__setting__text 本人情報
+    .call__number 
+      = link_to '#' do
+        %p.merupay__setting__text 電話番号の確認
+    .logout 
+      = link_to "/users/:id/logout" do
+        %p.merupay__setting__text ログアウト

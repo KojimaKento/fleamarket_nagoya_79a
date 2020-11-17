@@ -779,16 +779,30 @@
   }
 }
 
-
-
-
-.mypage__banner {
-  height: 260px;
-  background: url('/images/bg-mainVisual-pict_pc.jpg');
-  background-position: center;
-  background-size: cover;
+.logout {
+  width: 700px;
+  height: 179px;
+  padding: 64px;
+  background-color: #fff;
+  &__content {
+    height: 50px;
+    width: 320px;
+    margin: 0 126px;
+    .logout__button {
+      height: 48px;
+      width: 318px;
+      background: #ea352d;
+      border: 1px solid #ea352d;
+      color: #fff;
+      cursor: pointer;
+      text-align: center;
+      line-height: 48px;
+      font-size: 14px;
+    }
+  }
 }
-.mypage__footer {
-  height: 411px;
-  background-color: #212121;
-}
+
+
+
+
+

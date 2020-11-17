@@ -2,7 +2,7 @@
   .mypage__header__inner
     .mypage__header__top
       %h1.hurima__icon
-      = link_to "#" do
+      = link_to "/itens/index" do
         = image_tag "logo/logo.png", width: "134px", height: "34px"
       %form.form{action: "#"}
         %input.form__input{type: "search", name: "keyword", placeholder: "何かお探しですか？"}
@@ -110,7 +110,7 @@
           = link_to '#' do
             %p.merupay__setting__text 発送元・お届け先住所変更
         .pay 
-          = link_to '/users/new' do
+          = link_to '/users/:id/credit' do
             %p.merupay__setting__text 支払い方法
         .mail__password 
           = link_to '#' do

@@ -1,3 +1,11 @@
-= render "sample"
+= render "header"
+.mypage__main
+  .mypage__main__content
+    = render "side"
 
-%button.Signup-button{type: "submit"} ログアウト
+    .center
+      %form.logout
+        .logout__content
+          %button.logout__button{type: "submit"} ログアウト
+
+= render partial: 'items/footer'

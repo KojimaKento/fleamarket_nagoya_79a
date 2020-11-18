@@ -22,10 +22,14 @@
         Appleでログイン
     .SigninPage__main__form
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-
+        .SigninPage-notification
+          - flash.each do |key, value|
+            = content_tag :div, value, class: key
         .SigninPage__main__form--content
           .FormField
             = f.email_field :email, placeholder: "メールアドレス", class: "FormField__input"
+            - if resource.errors.include?(:email)
+              %p.AccountPage_error-message= resource.errors.full_messages_for(:email).first           
 
           .FormField
             = f.password_field :password, autocomplete: "off", placeholder: "パスワード", class: "FormField__input"

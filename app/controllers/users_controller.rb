@@ -3,8 +3,10 @@ class UsersController < ApplicationController
   end
 
   def credit
+    @user = User.find(params[:id])
   end
 
   def logout
+    @user = User.find(params[:id])
   end
 end

@@ -1,3 +1,16 @@
+.Notification {
+  .notice {
+    background-color: #38AEF0;
+    color: #fff;
+  }
+
+  .alert {
+    color: red;
+    font-size: 14px;
+  }
+}
+
+
 // mixin
 
 @mixin account-btn() {

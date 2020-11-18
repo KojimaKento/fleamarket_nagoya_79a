@@ -30,7 +30,6 @@
 
           .FormField
             = f.password_field :password, autocomplete: "off", placeholder: "パスワード", class: "FormField__input"
-
           .actions
             = f.submit "ログイン", class: 'Signin-button'
             = link_to new_user_password_path, class:"forgot-password" do

@@ -7,32 +7,26 @@
     .SignupPage__main__form
       = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
 
-        - if resource.errors.any?
-          #error_explanation
-            %h2
-              = pluralize(resource.errors.count, "つのエラーがあります")
-            
-
         .SignupPage__main__form--content
           .FormField
             = f.label :nickname, class: "FormField__label"
             %span.form-require 必須
             = f.text_field :nickname, autofocus: true, placeholder: "例）フリマ太朗", class: "FormField__input"
             - if resource.errors.include?(:nickname)
-              %p= resource.errors.full_messages_for(:nickname).first 
+              %p.AccountPage_error-message= resource.errors.full_messages_for(:nickname).first 
 
           .FormField
             = f.label :email, class: "FormField__label"
             %span.form-require 必須
             = f.email_field :email, placeholder: "PC・携帯どちらでも可", class: "FormField__input"  
             - if resource.errors.include?(:email)
-              %p= resource.errors.full_messages_for(:email).first           
+              %p.AccountPage_error-message= resource.errors.full_messages_for(:email).first           
           .FormField
             = f.label :password, class: "FormField__label"
             %span.form-require 必須
             = f.password_field :password, autocomplete: "off", placeholder: "8文字以上の半角英数字", class: "FormField__input", id:'password'
             - if resource.errors.include?(:password)
-              %p= resource.errors.full_messages_for(:password).first      
+              %p.AccountPage_error-message= resource.errors.full_messages_for(:password).first      
             %p.password-info-text ※英字と数字の両方を含めて設定してください
             .password-checkbox
               %input#password-check{:type => "checkbox"}
@@ -49,11 +43,10 @@
               .ProfileNew
                 = p.text_field :first_name, placeholder: "例)山田", class: "FormField__input ProfileNew__form"
                 = p.text_field :last_name, placeholder: "例)彩", class: "FormField__input ProfileNew__form"
-                .profile-error-message
-                  - if resource.profile.errors.include?(:first_name)
-                    %p= resource.profile.errors.full_messages_for(:first_name).first 
-                  - if resource.profile.errors.include?(:last_name)
-                    %p= resource.profile.errors.full_messages_for(:last_name).first 
+              - if resource.profile.errors.include?(:first_name)
+                %p.AccountPage_error-message= resource.profile.errors.full_messages_for(:first_name).first 
+              - if resource.profile.errors.include?(:last_name)
+                %p.AccountPage_error-message= resource.profile.errors.full_messages_for(:last_name).first 
 
 
 
@@ -63,19 +56,18 @@
                 .ProfileNew
                   = p.text_field :first_name_kana, placeholder: "例)ヤマダ", class: "FormField__input ProfileNew__form"
                   = p.text_field :last_name_kana, placeholder: "例)アヤ", class: "FormField__input ProfileNew__form"
-                  .profile-error-message
-                    - if resource.profile.errors.include?(:first_name_kana)
-                      %p= resource.profile.errors.full_messages_for(:first_name_kana).first 
-                    - if resource.profile.errors.include?(:last_name_kana)
-                      %p= resource.profile.errors.full_messages_for(:last_name_kana).first 
+                - if resource.profile.errors.include?(:first_name_kana)
+                  %p.AccountPage_error-message= resource.profile.errors.full_messages_for(:first_name_kana).first 
+                - if resource.profile.errors.include?(:last_name_kana)
+                  %p.AccountPage_error-message= resource.profile.errors.full_messages_for(:last_name_kana).first 
 
               .FormField
                 = p.label :birthday, "生年月日", class: "FormField__label"
                 %span.form-require 必須
                 .ProfileNew.birthday-line
                   != sprintf(p.date_select(:birthday, use_month_numbers: true,start_year: 1930, end_year: (Time.now.year - 10), default: Date.new(1989, 1, 1), prompt:"--", with_css_classes:'XXXXX', date_separator:'%s', class: "FormField__input ProfileNew__form"),'年','月')+'日'
-                  - if resource.profile.errors.include?(:birthday)
-                    %p= resource.profile.errors.full_messages_for(:birthday).first 
+                - if resource.profile.errors.include?(:birthday)
+                  %p.AccountPage_error-message= resource.profile.errors.full_messages_for(:birthday).first 
 
                 %p.password-info-text ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
 

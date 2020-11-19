@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   resources :items, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   resources :users, only: [:show]
   get "users/:id/credit", to: "users#credit"
-  get "users/:id/logout", to: "users#logout"
+  get "users/logout", to: "users#destroy"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

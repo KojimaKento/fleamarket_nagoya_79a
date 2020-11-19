@@ -74,5 +74,5 @@
       = link_to '#' do
         %p.merupay__setting__text 電話番号の確認
     .logout 
-      = link_to "/users/:id/logout" do
+      = link_to users_logout_path(@user) do
         %p.merupay__setting__text ログアウト

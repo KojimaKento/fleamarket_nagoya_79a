@@ -2,7 +2,7 @@
   .mypage__header__inner
     .mypage__header__top
       %h1.hurima__icon
-      = link_to "/itens/index" do
+      = link_to items_path do
         = image_tag "logo/logo.png", width: "134px", height: "34px"
       %form.form{action: "#"}
         %input.form__input{type: "search", name: "keyword", placeholder: "何かお探しですか？"}

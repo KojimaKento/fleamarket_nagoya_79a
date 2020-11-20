@@ -49,10 +49,11 @@ a{
                   .mini{
                     width: 25%;
                     margin: 0 10px 0 0;
+                    display: flex;
                     &_photo{
                       object-fit: cover;
                       height: 87px;
-                      width: 100%;
+                      width: 130px;
                       vertical-align: bottom;
                     }
                   }

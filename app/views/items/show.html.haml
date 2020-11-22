@@ -13,7 +13,8 @@
                 = image_tag @item.item_images[0].src.url, class:"product_photo"
                 %ul.Mini
                   .mini
-                    = image_tag @item.item_images[0].src.url, class:"mini_photo"
+                    - @item.item_images.each do |img|
+                      = image_tag img.src.url, class:"mini_photo"
           .itemBox_price
             %spen.itemBox_price_pay 
               ¥

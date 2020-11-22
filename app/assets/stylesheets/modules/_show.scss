@@ -50,6 +50,7 @@ a{
                     width: 25%;
                     margin: 0 10px 0 0;
                     display: flex;
+                    justify-content: center;
                     &_photo{
                       object-fit: cover;
                       height: 87px;

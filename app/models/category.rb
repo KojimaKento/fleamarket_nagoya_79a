@@ -1,5 +1,8 @@
 class Category < ActiveHash::Base
 
+  has_many :items
+  has_ancestry
+  
   self.data = [
     { id: 1, name: '--' },
     { id: 2, name: 'レディース' },

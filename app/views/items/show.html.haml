@@ -18,14 +18,17 @@
             %spen.itemBox_price_pay 
               ¥
               =  @item.price
-          - if  @item.seller_id != current_user.id
+          - if user_signed_in? && @item.seller_id != current_user.id
             .itemBox_button
               = link_to "購入画面に進む", "#", class: "PayBtn"
+          - elsif user_signed_in? && @item.seller_id == current_user.id
+            .itemBox_button
+              = link_to "削除", item_path(@item.id), method: :delete, class: "PayBtn"
+            .itemBox_button
+              = link_to "編集", edit_item_path(@item.id), class: "PayBtn"
           - else
             .itemBox_button
-              = link_to "削除", "#", class: "PayBtn"
-            .itemBox_button
-              = link_to "編集", "#", class: "PayBtn"
+              = link_to "購入画面に進む", new_user_session_path, class: "PayBtn"
           .itemDetail
             = @item.introduction
           .Table
@@ -34,6 +37,7 @@
                 %tr.tr
                   %th.th 出品者
                   %td.td 
+                    = @item.seller_id
                 %tr.tr
                   %th.th カテゴリー
                   %td.td
@@ -51,17 +55,20 @@
                   %td.td
                 %tr.tr
                   %th.th 商品の状態
-                  %td.td 新品/未使用
+                  %td.td 
+                    = @item.condition_id
                 %tr.tr
                   %th.th 配送料の負担
-                  %td.td 送料込み（出品者負担）
+                  %td.td 
+                    = @item.shipping_date_id
                 %tr.tr
                   %th.th 発送元の地域
                   %td.td
                     = link_to @item.delivery_source_area_id, "#"
                 %tr.tr
                   %th.th 発送日の目安
-                  %td.td 1-2日で発送
+                  %td.td 
+                    = @item.postage_id
           .optionalArea
             %ul.optionalArea_ul
               %li.linkBtn

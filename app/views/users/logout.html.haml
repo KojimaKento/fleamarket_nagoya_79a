@@ -6,6 +6,7 @@
     .center
       %form.logout
         .logout__content
-          %button.logout__button{type: "submit"} ログアウト
-
+          =link_to destroy_user_session_path , method: :delete do
+            %button{type: "submit",class:"logout__button"} ログアウト
+            
 = render partial: 'items/footer'

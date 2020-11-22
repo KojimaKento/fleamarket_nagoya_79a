@@ -1,6 +1,5 @@
 class Category < ActiveHash::Base
 
-  has_ancestry
   
   self.data = [
     { id: 1, name: '--' },

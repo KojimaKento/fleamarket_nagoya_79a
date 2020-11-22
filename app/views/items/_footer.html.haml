@@ -42,7 +42,13 @@
   .top_footer__logo
     =link_to image_tag( "logo/logo-white.png", class:"top_footer__logo_image" ),"#"
   %p.top_footer__copyright© FURIMA
-= link_to "#" do
-  .purchasebotn
-    %span.purchasebotn__text 出品する
-    = image_tag "icon/icon_camera.png",class:"purchasebotn__icon"
+- if user_signed_in?
+  = link_to new_item_path do
+    .purchasebotn
+      %span.purchasebotn__text 出品する
+      = image_tag "icon/icon_camera.png",class:"purchasebotn__icon"
+- else
+  = link_to new_user_session_path do
+    .purchasebotn
+      %span.purchasebotn__text 出品する
+      = image_tag "icon/icon_camera.png",class:"purchasebotn__icon"

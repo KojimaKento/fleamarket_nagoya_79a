@@ -1,6 +1,6 @@
 .title-bar-1
   .title-bar-2
-    = link_to image_tag("logo/logo.png", class: "logo"), "#"
+    = link_to image_tag("logo/logo.png", class: "logo"), items_path
 
 .floor1
   .content1
@@ -100,7 +100,6 @@
 
       .button
         = f.submit class: 'button-1'
-        = link_to "下書きに保存", "#", class: "button-2"
         .back
           = link_to 'もどる', '#', class: "under-line"
       

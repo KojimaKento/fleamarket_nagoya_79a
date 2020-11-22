@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
   def show
-    @user = User.find(params[:id])
+  end
+
+  def credit
+  end
+
+  def logout
   end
 end

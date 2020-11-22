@@ -1,0 +1,12 @@
+= render "header"
+.mypage__main
+  .mypage__main__content
+    = render "side"
+
+    .center
+      %form.logout
+        .logout__content
+          =link_to destroy_user_session_path , method: :delete do
+            %button{type: "submit",class:"logout__button"} ログアウト
+            
+= render partial: 'items/footer'

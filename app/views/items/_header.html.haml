@@ -1,7 +1,7 @@
 .top_top
   .top_header
     .top_header__main
-      = link_to image_tag("logo/logo.png", class:"top_header__main__icon"), "#"
+      = link_to image_tag("logo/logo.png", class:"top_header__main__icon"),items_path
       .search
         .box
           %form{"accept-charset" => "UTF-8", :action => "#", :method => "get",class:"box_internal"}
@@ -13,10 +13,19 @@
       .nav_1_listsleft
         .nav_1_listsleft__category
           = link_to "カテゴリー", "#", class: "btn"
-        .nav_1_listsleft__brand
+        .nav_1_listsleft__brand                             
           = link_to "ブランド", destroy_user_session_path, class: "btn" 
-      .nav_1_listsright
-        .nav_1_listsright__login
-          = link_to "ログイン", new_user_session_path , class: "btn"
-        .nav_1_listsright__sign-up
-          = link_to "新規会員登録", new_user_registration_path , class: "btn" 
+      - if user_signed_in?
+        .nav_1_listsright
+          .nav_1_listsright__login
+            = link_to "マイページ", user_path(current_user.id), class: "btn"
+      - else
+        .nav_1_listsright
+          .nav_1_listsright__login
+            = link_to "ログイン", new_user_session_path , class: "btn"
+          .nav_1_listsright__sign-up
+            = link_to "新規会員登録", new_user_registration_path , class: "btn" 
+        
+
+
+      

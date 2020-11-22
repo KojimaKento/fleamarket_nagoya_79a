@@ -73,158 +73,76 @@
         .item__subtitle
           様々な支払いに対応
         %p.item__detail お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
-  .picupcontainer
-    .head__title
-      ピックアップブランド
-    .probuctbox
-      = link_to "新規投稿商品", "#", class: "probuctbox__title" 
-      .probuctbox__listss
-        .probuctbox__product
-          = link_to "/items/show", class:"photos" do
-            = image_tag "pict/beef.png", class:"photos_photo"
-            .photos__body
-              .photos__body__name
-                テスト
-              .photos__body__details
-                %ul.fee
-                  %li.fee__pay
-                    10000円
-                  %li.fee__pay
-                    = icon('fas', 'star')
-                    1
-                %p.tax （税込）
-        .probuctbox__product
-          = link_to "#", class:"photos" do
-            = image_tag "pict/beef.png", class:"photos_photo"
-            .photos__body
-              .photos__body__name
-                テスト
-              .photos__body__details
-                %ul.fee
-                  %li.fee__pay
-                    10000円
-                  %li.fee__pay
-                    = icon('fas', 'star')
-                    1
-                %p.tax （税込）
-        .probuctbox__product
-          = link_to "#", class:"photos" do
-            = image_tag "pict/beef.png", class:"photos_photo"
-            .photos__body
-              .photos__body__name
-                テスト
-              .photos__body__details
-                %ul.fee
-                  %li.fee__pay
-                    10000円
-                  %li.fee__pay
-                    = icon('fas', 'star')
-                    1
-                %p.tax （税込）
-        .probuctbox__product
-          = link_to "#", class:"photos" do
-            = image_tag "pict/beef.png", class:"photos_photo"
-            .photos__body
-              .photos__body__name
-                テスト
-              .photos__body__details
-                %ul.fee
-                  %li.fee__pay
-                    10000円
-                  %li.fee__pay
-                    = icon('fas', 'star')
-                    1
-                %p.tax （税込）
-        .probuctbox__product
-          = link_to "#", class:"photos" do
-            = image_tag "pict/beef.png", class:"photos_photo"
-            .photos__body
-              .photos__body__name
-                テスト
-              .photos__body__details
-                %ul.fee
-                  %li.fee__pay
-                    10000円
-                  %li.fee__pay
-                    = icon('fas', 'star')
-                    1
-                %p.tax （税込）
-  .picupcontainer
-    .head__title
-      ピックアップブランド
-    .probuctbox
-      = link_to "アーカイブ", "#", class: "probuctbox__title" 
-      .probuctbox__listss
-        .probuctbox__product
-          = link_to "/items/show", class:"photos" do
-            = image_tag "pict/beef.png", class:"photos_photo"
-            .photos__body
-              .photos__body__name
-                テスト
-              .photos__body__details
-                %ul.fee
-                  %li.fee__pay
-                    10000円
-                  %li.fee__pay
-                    = icon('fas', 'star')
-                    1
-                %p.tax （税込）
-        .probuctbox__product
-          = link_to "#", class:"photos" do
-            = image_tag "pict/beef.png", class:"photos_photo"
-            .photos__body
-              .photos__body__name
-                テスト
-              .photos__body__details
-                %ul.fee
-                  %li.fee__pay
-                    10000円
-                  %li.fee__pay
-                    = icon('fas', 'star')
-                    1
-                %p.tax （税込）
-        .probuctbox__product
-          = link_to "#", class:"photos" do
-            = image_tag "pict/beef.png", class:"photos_photo"
-            .photos__body
-              .photos__body__name
-                テスト
-              .photos__body__details
-                %ul.fee
-                  %li.fee__pay
-                    10000円
-                  %li.fee__pay
-                    = icon('fas', 'star')
-                    1
-                %p.tax （税込）
-        .probuctbox__product
-          = link_to "#", class:"photos" do
-            = image_tag "pict/beef.png", class:"photos_photo"
-            .photos__body
-              .photos__body__name
-                テスト
-              .photos__body__details
-                %ul.fee
-                  %li.fee__pay
-                    10000円
-                  %li.fee__pay
-                    = icon('fas', 'star')
-                    1
-                %p.tax （税込）
-        .probuctbox__product
-          = link_to "#", class:"photos" do
-            = image_tag "pict/beef.png", class:"photos_photo"
-            .photos__body
-              .photos__body__name
-                テスト
-              .photos__body__details
-                %ul.fee
-                  %li.fee__pay
-                    10000円
-                  %li.fee__pay
-                    = icon('fas', 'star')
-                    1
-                %p.tax （税込）
+  -if user_signed_in?
+    .picupcontainer
+      .head__title
+        ピックアップブランド
+      .probuctbox
+        = link_to "新規投稿商品", "#", class: "probuctbox__title" 
+        .probuctbox__listss
+          - @items.each do |item|
+            - if  item.seller_id != current_user.id
+              .probuctbox__product
+                = link_to item_path(item.id), class:"photos" do
+                  = image_tag item.item_images[0].src.url, class:"photos_photo"
+                  .photos__body
+                    .photos__body__name
+                      = item.name
+                    .photos__body__details
+                      %ul.fee
+                        %li.fee__pay
+                          = item.price 
+                          円
+                        %li.fee__pay
+                          = icon('fas', 'star')
+                          1
+                      %p.tax （税込）
+    .picupcontainer
+      .head__title
+        ピックアップブランド
+      .probuctbox
+        = link_to "アーカイブ", "#", class: "probuctbox__title" 
+        .probuctbox__listss
+          - @items.each do |item|
+            - if  item.seller_id == current_user.id
+              .probuctbox__product
+                = link_to item_path(item.id), class:"photos" do
+                  = image_tag item.item_images[0].src.url, class:"photos_photo"
+                  .photos__body
+                    .photos__body__name
+                      = item.name
+                    .photos__body__details
+                      %ul.fee
+                        %li.fee__pay
+                          = item.price 
+                          円
+                        %li.fee__pay
+                          = icon('fas', 'star')
+                          1
+                      %p.tax （税込）
+  -else 
+    .picupcontainer
+      .head__title
+        ピックアップブランド
+      .probuctbox
+        = link_to "新規投稿商品", "#", class: "probuctbox__title" 
+        .probuctbox__listss
+          - @items.each do |item|
+            .probuctbox__product
+              = link_to item_path(item.id), class:"photos" do
+                = image_tag item.item_images[0].src.url, class:"photos_photo"
+                .photos__body
+                  .photos__body__name
+                    = item.name
+                  .photos__body__details
+                    %ul.fee
+                      %li.fee__pay
+                        = item.price 
+                        円
+                      %li.fee__pay
+                        = icon('fas', 'star')
+                        1
+                    %p.tax （税込）
 = render partial: 'items/footer'
 
 

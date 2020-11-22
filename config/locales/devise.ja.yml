@@ -27,8 +27,15 @@ ja:
         unconfirmed_email: 未確認Eメール
         unlock_token: ロック解除用トークン
         updated_at: 更新日
+      profile:
+        first_name: 姓
+        last_name: 名
+        first_name_kana: 姓カナ
+        last_name_kana: 名カナ
+        birthday: 生年月日
     models:
       user: ユーザ
+      profile: プロフィール
   devise:
     confirmations:
       confirmed: メールアドレスが確認できました。

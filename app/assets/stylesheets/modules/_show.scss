@@ -49,10 +49,11 @@ a{
                   .mini{
                     width: 25%;
                     margin: 0 10px 0 0;
+                    display: flex;
                     &_photo{
                       object-fit: cover;
                       height: 87px;
-                      width: 100%;
+                      width: 130px;
                       vertical-align: bottom;
                     }
                   }
@@ -85,8 +86,8 @@ a{
               -webkit-box-pack: center;
               -webkit-box-align: center;
               color: #fff;
-              background-color: rgb(234, 53, 45);
-              border: 1px solid rgb(234, 53, 45);
+              background-color: #3CCACE;
+              border: 1px solid #3CCACE;
               pointer-events: auto;
               box-sizing: border-box;
               margin-bottom: 30px;

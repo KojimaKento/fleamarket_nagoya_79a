@@ -23,12 +23,16 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
+    @item.item_images.build
   end
 
   def update
-    item = Item.find(params[:id])
-    item.update(item_params)
-    redirect_to item_path(item.id)
+    @item = Item.find(params[:id])
+    if @item.update(item_params)
+      redirect_to item_path(@item.id)
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -40,7 +44,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :introduction, :price, :category_id, :brand, :condition_id, :shipping_date_id, :delivery_source_area_id, :postage_id, item_images_attributes: [:src]).merge(seller_id: current_user.id)
+    params.require(:item).permit(:name, :introduction, :price, :category_id, :brand, :condition_id, :shipping_date_id, :delivery_source_area_id, :postage_id, item_images_attributes: [:src, :id]).merge(seller_id: current_user.id)
   end
 
 end

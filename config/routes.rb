@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'card/new'
   get 'card/show'
   root 'items#index'
+  get 'items/create'
   devise_for :users, controllers: { registrations: 'users/registrations' }
 
 

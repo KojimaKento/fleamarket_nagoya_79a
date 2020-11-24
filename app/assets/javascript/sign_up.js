@@ -1,12 +1,9 @@
 $(function(){
-  var password = '#password';
-  var passcheck = '#password-check';
-
-  $(passcheck).change(function(){
+  $("#password-check").change(function(){
     if ($(this).prop('checked')){
-      $(password).attr('type','text');
+      $('#password').attr('type','text');
     } else {
-      $(password).attr('type','password');
+      $('#password').attr('type','password');
     }
   });
 });

@@ -86,17 +86,18 @@
           .price__title
             %label.label 販売価格
             %span.tag 必須
+          %span.fee-mark ¥
           .price__name
             = f.text_field :price, :placeholder => "10000", class: 'form2__price'
         .price__fee
           .price__title
             %label.label2 販売手数料（10%）
-          %span.tag3 ¥1,000
+          %span.tag3
           %hr.price__sen
         .price__return
           .price__title
             %label.label2 販売利益    
-          %span.tag4 ¥1,000
+          %span.tag4 
 
       .button
         = f.submit class: 'button-1'

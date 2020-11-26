@@ -33,9 +33,14 @@ ja:
         first_name_kana: 姓カナ
         last_name_kana: 名カナ
         birthday: 生年月日
+      item:
+        name: 商品名
+        introduction: 商品の説明
+        price: 価格
     models:
       user: ユーザ
       profile: プロフィール
+      item: 商品
   devise:
     confirmations:
       confirmed: メールアドレスが確認できました。

@@ -91,7 +91,6 @@
     background-color: rgb(245, 245, 245);
     border: 1px dashed rgb(204, 204, 204);
     display: inline-block;
-    height: 150px;
     box-sizing: border-box;
     width: inherit;
   }
@@ -379,5 +378,10 @@
   font-weight: bold;
 }
 
+#previews {
+  img {
+    margin: 0 5px;
+  }
+}
 
 

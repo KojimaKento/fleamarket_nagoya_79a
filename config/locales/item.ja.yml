@@ -1,0 +1,18 @@
+ja:
+  activerecord:
+    attributes:
+      item:
+        name: 商品名
+        introduction: 商品の説明
+        price: 価格
+        item_images: 商品の画像
+    errors:
+      models:
+        item:
+          attributes:
+            item_images:
+              too_long: 'は%{count}個までしか選択できません'
+    models:
+      item: 商品
+      
+      

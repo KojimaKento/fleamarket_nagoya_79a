@@ -22,10 +22,7 @@
                   = i.file_field :src, class: "js-file"
                 .js-remove 削除
           - if @item.errors.include?(:item_images)
-            %p.AccountPage_error-message 商品の画像を選択してください
-          - if @item.errors.include?(:item_images)
             %p.AccountPage_error-message= @item.errors.full_messages_for(:item_images).first 
-              
                 
       .goods
         .title

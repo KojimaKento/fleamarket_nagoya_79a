@@ -15,7 +15,7 @@ class Item < ApplicationRecord
   accepts_nested_attributes_for :item_images, allow_destroy: true
   
   validates_associated :item_images
-  validates :item_images, presence: true
+  validates :item_images, presence: true, length: {maximum: 10}
 
   validates :name, presence: true
   validates :introduction, presence: true

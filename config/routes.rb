@@ -3,12 +3,16 @@ Rails.application.routes.draw do
   get 'card/new'
   get 'card/show'
   root 'items#index'
+  get 'items/create'
   devise_for :users, controllers: { registrations: 'users/registrations' }
 
 
   resources :items, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     collection do
       get 'done'
+    end
+    member do
+      get 'purchase'
     end
   end
   resources :users, only: [:show]

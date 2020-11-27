@@ -6,7 +6,11 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'users/registrations' }
 
 
-  resources :items, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+  resources :items, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
+    collection do
+      get 'done'
+    end
+  end
   resources :users, only: [:show]
   get "users/:id/credit", to: "users#credit"
   get "users/:id/logout", to: "users#logout"

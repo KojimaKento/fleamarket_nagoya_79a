@@ -1,6 +1,8 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item.all
+    @items = Item.order('id DESC').limit(5).where.not(seller_id: current_user&.id)
+    @my_items = Item.where(seller_id: current_user&.id).limit(5)
+
   end
 
   def show
@@ -39,6 +41,11 @@ class ItemsController < ApplicationController
     item = Item.find(params[:id])
     item.destroy
     redirect_to root_path
+  end
+
+  def  done
+    @item= Item.find(params[:id])
+    @item.update( buyer_id: current_user.id)
   end
 
   private

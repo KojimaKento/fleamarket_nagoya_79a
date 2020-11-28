@@ -1,39 +1,39 @@
-.credit-card2__registration
-  .credit-card2__registration__text クレジットカード情報入力
-  %form.credit__form
-    .registration__contents
-      .card__number
-        .card__number__text 
-          .number__text カード番号
-          .must__number 必須
-        %input.numbers__text{type: "text", placeholder: "半角数字のみ"}
-        .card__number__company
-          .logo__visa
-            = link_to '#' do
-              = image_tag 'logo/logo_visa.gif', alt: 'visa', height: '25px'
-          .logo__mastercard
-            = link_to '#' do
-              = image_tag 'logo/logo_mastercard.gif', alt: 'mastercard', height: '25px'
-          .logo__diners
-            = link_to '#' do
-              = image_tag 'logo/diners_logo_white.gif', alt: 'diners', height: '25px'
-      .expiration__date
-        .expiration__date__text
-          .date__text 有効期限
-          .must__number 必須
-        .expiration__date__contents
-          %input.month__date{type: "text"}
-          .month__text 月
-          %input.year__date{type: "text"}
-          .year__text 年
-      .security__code
-        .security__code__text
-          .code__text セキュリティーコード
-          .must__number 必須
-        .security__code__contents
-          %input.security__code__numbers{type: "text", placeholder: "カード背面4桁もしくは3桁の番号"}
-        .security__code__backnumber
-          .security__code__backnumber__question ?
-          .security__code__backnumber__text カード裏面の番号とは？
-      %button.add__button{type: "submit"} 追加する
-      .back__text もどる
+= form_tag(pay_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
+  %label カード番号
+  = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
+  %br
+  %label 有効期限
+  %select#exp_month{name: "exp_month", type: "text"}
+    %option{value: ""} --
+    %option{value: "1"}01
+    %option{value: "2"}02
+    %option{value: "3"}03
+    %option{value: "4"}04
+    %option{value: "5"}05
+    %option{value: "6"}06
+    %option{value: "7"}07
+    %option{value: "8"}08
+    %option{value: "9"}09
+    %option{value: "10"}10
+    %option{value: "11"}11
+    %option{value: "12"}12
+  %span 月/
+  %select#exp_year{name: "exp_year", type: "text"}
+    %option{value: ""} --
+    %option{value: "2019"}19
+    %option{value: "2020"}20
+    %option{value: "2021"}21
+    %option{value: "2022"}22
+    %option{value: "2023"}23
+    %option{value: "2024"}24
+    %option{value: "2025"}25
+    %option{value: "2026"}26
+    %option{value: "2027"}27
+    %option{value: "2028"}28
+    %option{value: "2029"}29
+  %span 年
+  %br
+  %label セキュリティコード
+  = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
+  #card_token
+  = submit_tag "追加する", id: "token_submit"

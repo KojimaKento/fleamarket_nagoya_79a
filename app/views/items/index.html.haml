@@ -109,6 +109,8 @@
               .probuctbox__product
                 = link_to item_path(item.id), class:"photos" do
                   = image_tag item.item_images[0].src.url, class:"photos_photo"
+                  -if item.buyer_id.present? 
+                    SOLD
                   .photos__body
                     .photos__body__name
                       = item.name

@@ -81,30 +81,31 @@
         = link_to "新規投稿商品", "#", class: "probuctbox__title" 
         .probuctbox__listss
           - @items.each do |item|
-            - if  item.seller_id != current_user.id
-              .probuctbox__product
-                = link_to item_path(item.id), class:"photos" do
-                  = image_tag item.item_images[0].src.url, class:"photos_photo"
-                  .photos__body
-                    .photos__body__name
-                      = item.name
-                    .photos__body__details
-                      %ul.fee
-                        %li.fee__pay
-                          = item.price 
-                          円
-                        %li.fee__pay
-                          = icon('fas', 'star')
-                          1
-                      %p.tax （税込）
+            .probuctbox__product
+              = link_to item_path(item.id), class:"photos" do
+                = image_tag item.item_images[0].src.url, class:"photos_photo"
+                -if item.buyer_id.present? 
+                  SOLD
+                .photos__body
+                  .photos__body__name
+                    = item.name
+                  .photos__body__details
+                    %ul.fee
+                      %li.fee__pay
+                        = item.price 
+                        円
+                      %li.fee__pay
+                        = icon('fas', 'star')
+                        1
+                    %p.tax （税込）
     .picupcontainer
       .head__title
         ピックアップブランド
       .probuctbox
         = link_to "アーカイブ", "#", class: "probuctbox__title" 
         .probuctbox__listss
-          - @items.each do |item|
-            - if  item.seller_id == current_user.id
+          - @my_items.each do |item|
+            - if item.seller_id == current_user.id
               .probuctbox__product
                 = link_to item_path(item.id), class:"photos" do
                   = image_tag item.item_images[0].src.url, class:"photos_photo"

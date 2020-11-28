@@ -2,7 +2,9 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:edit, :update, :destroy, :show]
 
   def index
-    @items = Item.all
+    @items = Item.order('id DESC').limit(5).where.not(seller_id: current_user&.id)
+    @my_items = Item.where(seller_id: current_user&.id).limit(5)
+
   end
 
   def new
@@ -46,6 +48,11 @@ class ItemsController < ApplicationController
   def purchase
     @item = Item.new
     @item.item_images.new
+  end
+
+  def  done
+    @item= Item.find(params[:id])
+    @item.update( buyer_id: current_user.id)
   end
 
   private

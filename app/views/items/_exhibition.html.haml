@@ -34,25 +34,27 @@
     
     .details
       %p.moji 商品の詳細
-      .title
-        %label.label カテゴリー
-        %span.tag 必須
-      .details__name
-        %select{class: "select-name", :name => "sample-name"}
-          %option{"aria-selected" => "true", :label => "選択してください"}
-          %option{"aria-selected" => "false", :label => "レディース", :value => "1"}
-          %option{"aria-selected" => "false", :label => "メンズ", :value => "2"}
-          %option{"aria-selected" => "false", :label => "ベビー・キッズ", :value => "3"}
-          %option{"aria-selected" => "false", :label => "インテリア・住まい・小物", :value => "4"}
-          %option{"aria-selected" => "false", :label => "本・音楽・ゲーム", :value => "5"}
-          %option{"aria-selected" => "false", :label => "おもちゃ・ホビー・グッズ", :value => "6"}
-          %option{"aria-selected" => "false", :label => "コスメ・香水・美容", :value => "7"}
-          %option{"aria-selected" => "false", :label => "家電・スマホ・カメラ", :value => "8"}
-          %option{"aria-selected" => "false", :label => "スポーツ・レジャー", :value => "9"}
-          %option{"aria-selected" => "false", :label => "ハンドメイド", :value => "10"}
-          %option{"aria-selected" => "false", :label => "チケット", :value => "11"}
-          %option{"aria-selected" => "false", :label => "自動車・オートバイ", :value => "12"}
-          %option{"aria-selected" => "false", :label => "その他", :value => "13"}
+      .category
+        .title
+          %label.label カテゴリー
+          %span.tag 必須
+        .details__name
+          = form.collection_select :category_id, Category.roots, :id, :name, {prompt: '---'}, {id: 'parent_category'}
+          -# %select{class: "select-name", :name => "sample-name"}
+          -#   %option{"aria-selected" => "true", :label => "選択してください"}
+          -#   %option{"aria-selected" => "false", :label => "レディース", :value => "1"}
+          -#   %option{"aria-selected" => "false", :label => "メンズ", :value => "2"}
+          -#   %option{"aria-selected" => "false", :label => "ベビー・キッズ", :value => "3"}
+          -#   %option{"aria-selected" => "false", :label => "インテリア・住まい・小物", :value => "4"}
+          -#   %option{"aria-selected" => "false", :label => "本・音楽・ゲーム", :value => "5"}
+          -#   %option{"aria-selected" => "false", :label => "おもちゃ・ホビー・グッズ", :value => "6"}
+          -#   %option{"aria-selected" => "false", :label => "コスメ・香水・美容", :value => "7"}
+          -#   %option{"aria-selected" => "false", :label => "家電・スマホ・カメラ", :value => "8"}
+          -#   %option{"aria-selected" => "false", :label => "スポーツ・レジャー", :value => "9"}
+          -#   %option{"aria-selected" => "false", :label => "ハンドメイド", :value => "10"}
+          -#   %option{"aria-selected" => "false", :label => "チケット", :value => "11"}
+          -#   %option{"aria-selected" => "false", :label => "自動車・オートバイ", :value => "12"}
+          -#   %option{"aria-selected" => "false", :label => "その他", :value => "13"}
       .details__title
         %label.label ブランド
         %span.tag2 任意

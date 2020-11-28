@@ -38,11 +38,13 @@
       
       .details
         %p.moji 商品の詳細
-        .title
-          %label.label カテゴリー
-          %span.tag 必須
-        .details__name
-          = f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-name"})
+        .category
+          .title
+            %label.label カテゴリー
+            %span.tag 必須
+          .details__name
+            .category__name
+              = f.collection_select(:category_id, Category.where(ancestry: nil), :id, :name, {prompt: '---'}, {id: 'parent_category'}, )
         .details__title
           %label.label ブランド
           %span.tag2 任意

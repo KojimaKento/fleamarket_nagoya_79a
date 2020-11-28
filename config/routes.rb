@@ -6,7 +6,13 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'users/registrations' }
 
 
-  resources :items, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+  resources :items, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
+    collection do
+      get 'category/get_category_children', to: 'items#get_category_children', defaults: { format: 'json' }
+      get 'category/get_category_grandchildren', to: 'items#get_category_grandchildren', defaults: { format: 'json' }
+    end
+  end
+  
   resources :users, only: [:show]
   get "users/:id/credit", to: "users#credit"
   get "users/:id/logout", to: "users#logout"

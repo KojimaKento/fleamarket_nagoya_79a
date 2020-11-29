@@ -39,12 +39,14 @@
       .details
         %p.moji 商品の詳細
         .category
-          .title
-            %label.label カテゴリー
-            %span.tag 必須
-          .details__name
-            .category__name
-              = f.collection_select(:category_id, Category.where(ancestry: nil), :id, :name, {prompt: '---'}, {id: 'parent_category'}, )
+          .category__contents
+            = form_with(model: @item, local: true) do |f|
+              .category__details
+                .category__title
+                  %label.label カテゴリー
+                  %span.tag 必須
+                .category__choose
+                  = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: '選択してください'}, {class: 'catrgoryForm', id: 'parent_category'}
         .details__title
           %label.label ブランド
           %span.tag2 任意
@@ -102,8 +104,7 @@
 
       .button
         = f.submit class: 'button-1'
-        .back
-          = link_to 'もどる', '#', class: "under-line"
+        = link_to "下書きに保存", "#", class: "button-2"
       
       .attention
         %p.attention__content

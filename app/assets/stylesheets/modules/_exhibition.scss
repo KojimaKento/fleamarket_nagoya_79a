@@ -190,7 +190,19 @@
   }
 }
 
-.category__name {
+.category__choose {
+  margin-top: 16px;
+}
+.catrgoryForm {
+  width: 100%;
+  color: #222;
+  font-size: 16px;
+  height: 48px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-bottom: 5px;
+}
+.category__choose--select {
   width: 620px;
   padding: 0 56px 0 16px;
   color: #222;

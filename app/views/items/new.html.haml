@@ -43,13 +43,14 @@
         %p.moji 商品の詳細
         .category
           .category__contents
-            = form_with(model: @item, local: true) do |f|
-              .category__details
-                .category__title
-                  %label.label カテゴリー
-                  %span.tag 必須
-                .category__choose
-                  = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: '選択してください'}, {class: 'catrgoryForm', id: 'parent_category'}
+            .category__details
+              .category__title
+                %label.label カテゴリー
+                %span.tag 必須
+              .category__choose
+                = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: '選択してください'}, {class: 'catrgoryForm', id: 'parent_category'}
+                - if @item.errors.include?(:category_id)
+                  %p.AccountPage_error-message カテゴリーを選択してください
         .details__title
           %label.label ブランド
           %span.tag2 任意

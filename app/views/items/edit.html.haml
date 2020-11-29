@@ -12,16 +12,12 @@
           .exhibition__sentence 最大10枚までアップロードできます
           .exhibition__photo
             #image-box
+              #previews
               = f.fields_for :item_images do |i|
                 .js-file_group{data: {index: i.index}}
                   = i.file_field :src, class: "js-file"
-            .exhibition__icon
-              = link_to '#' do
-                = icon('fas', 'camera fa-lg')
-            %p.exhibition__text
-              ドラッグアンドドロップ 
-              %br 
-              またはクリックしてファイルをアップロード
+        - if @item.errors.include?(:item_images)
+          %p.AccountPage_error-message= @item.errors.full_messages_for(:item_images).first 
 
       .goods
         .title

@@ -91,7 +91,6 @@
     background-color: rgb(245, 245, 245);
     border: 1px dashed rgb(204, 204, 204);
     display: inline-block;
-    height: 150px;
     box-sizing: border-box;
     width: inherit;
   }
@@ -396,5 +395,16 @@
   background-color: rgb(34, 34, 34);
 }
 
+.fee-mark {
+  padding: 15px 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#previews {
+  img {
+    margin: 0 5px;
+  }
+}
 
 

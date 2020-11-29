@@ -12,26 +12,26 @@
           .exhibition__sentence 最大10枚までアップロードできます
           .exhibition__photo
             #image-box
+              #previews
               = f.fields_for :item_images do |i|
                 .js-file_group{data: {index: i.index}}
                   = i.file_field :src, class: "js-file"
-            .exhibition__icon
-              = link_to '#' do
-                = icon('fas', 'camera fa-lg')
-            %p.exhibition__text
-              ドラッグアンドドロップ 
-              %br 
-              またはクリックしてファイルをアップロード
+        - if @item.errors.include?(:item_images)
+          %p.AccountPage_error-message= @item.errors.full_messages_for(:item_images).first 
 
       .goods
         .title
           %label.label 商品名
           %span.tag 必須
           = f.text_field :name, :placeholder => "40文字まで", class: 'form__name'
+          - if @item.errors.include?(:name)
+            %p.AccountPage_error-message= @item.errors.full_messages_for(:name).first 
         .goods__title
           %label.label 商品の説明
           %span.tag 必須
           = f.text_area :introduction, :rows=>"7", :placeholder => "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例) 2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでオススメです。", class: 'form__explain'
+          - if @item.errors.include?(:introduction)
+            %p.AccountPage_error-message= @item.errors.full_messages_for(:introduction).first 
         .goods__count
           0/1000
       
@@ -42,6 +42,8 @@
           %span.tag 必須
         .details__name
           = f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-name"})
+          - if @item.errors.include?(:category_id)
+            %p.AccountPage_error-message カテゴリーを選択してください
         .details__title
           %label.label ブランド
           %span.tag2 任意
@@ -51,6 +53,8 @@
           %span.tag 必須
         .details__name
           = f.collection_select(:condition_id, Condition.all, :id, :name, {}, {class:"select-name"})
+          - if @item.errors.include?(:condition_id)
+            %p.AccountPage_error-message 商品の状態を選択してください
 
       .delivery
         .moji
@@ -63,17 +67,23 @@
           %span.tag 必須
         .delivery__name
           = f.collection_select(:postage_id, Postage.all, :id, :name, {}, {class:"select-name"})
+          - if @item.errors.include?(:postage_id)
+            %p.AccountPage_error-message 配送料の負担を選択してください
         .delivery__title
           %label.label 発送元の地域
           %span.tag 必須
         .delivery__name
           = f.collection_select(:delivery_source_area_id, DeliverySourceArea.all, :id, :name, {}, {class:"select-name"})
+          - if @item.errors.include?(:delivery_source_area_id)
+            %p.AccountPage_error-message 発送元の地域を選択してく
 
         .delivery__title
           %label.label 発送までの日数
           %span.tag 必須
         .delivery__name
           = f.collection_select(:shipping_date_id, ShippingDate.all, :id, :name, {}, {class:"select-name"})
+          - if @item.errors.include?(:shipping_date_id)
+            %p.AccountPage_error-message 発送までの日数を選択してください
         
       .price
         .moji
@@ -87,15 +97,17 @@
             %span.tag 必須
           .price__name
             = f.text_field :price, :placeholder => "10000", class: 'form2__price'
+            - if @item.errors.include?(:price)
+              %p.AccountPage_error-message= @item.errors.full_messages_for(:price).first 
         .price__fee
           .price__title
             %label.label2 販売手数料（10%）
-          %span.tag3 ¥1,000
+          %span.tag3
           %hr.price__sen
         .price__return
           .price__title
-            %label.label2 販売利益
-          %span.tag4 ¥1,000
+            %label.label2 販売利益    
+          %span.tag4 
 
       .button
         = f.submit class: 'button-1'

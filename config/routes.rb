@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'card/new'
   get 'card/show'
   root 'items#index'
+  get 'items/create'
   devise_for :users, controllers: { registrations: 'users/registrations' }
 
 
@@ -12,7 +13,13 @@ Rails.application.routes.draw do
       get 'category/get_category_grandchildren', to: 'items#get_category_grandchildren', defaults: { format: 'json' }
     end
   end
-  
+    collection do
+      get 'done'
+    end
+    member do
+      get 'purchase'
+    end
+  end
   resources :users, only: [:show]
   get "users/:id/credit", to: "users#credit"
   get "users/:id/logout", to: "users#logout"

@@ -42,11 +42,11 @@
                 %tr.tr
                   %th.th カテゴリー
                   %td.td
-                    = link_to @item.category.name, "#"
-                    -#%br
-                    -#= link_to "トップス", "#"
-                    -#%br
-                    -#= link_to "Tシャツ/カットソー(半袖/袖なし)", "#"
+                    = link_to @category_ancestor.name, "#" 
+                    %br
+                    = link_to @category_child.name, "#"
+                    %br
+                    = link_to @category.name, "#"
                 %tr.tr
                   %th.th ブランド
                   %td.td 

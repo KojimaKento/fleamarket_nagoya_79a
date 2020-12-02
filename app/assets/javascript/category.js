@@ -22,11 +22,10 @@ $(document).on('turbolinks:load', function(){
     function appendGrandchidrenBox(insertHTML){
       var grandchildSelectHtml = '';
       grandchildSelectHtml = `<div class='catrgoryForm' id= 'grandchildren_wrapper'>
-                                  <select class="category__choose--select" id="grandchild_category" name="item[category_id]">
-                                    <option value="---" data-category="---">---</option>
-                                    ${insertHTML}
-                                  </select>
-                                </div>
+                                <select class="category__choose--select" id="grandchild_category" name="item[category_id]">
+                                  <option value="---" data-category="---">---</option>
+                                  ${insertHTML}
+                                </select>
                               </div>`;
       $('.category__choose').append(grandchildSelectHtml);
     }

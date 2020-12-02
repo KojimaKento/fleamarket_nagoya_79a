@@ -46,6 +46,9 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @category = @item.category
+    @category_ancestor = @category.parent.parent
+    @category_child = @category.parent
   end
 
   def purchase

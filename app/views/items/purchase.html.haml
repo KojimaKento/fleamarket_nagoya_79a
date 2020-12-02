@@ -11,57 +11,17 @@
       .content3
         .purchase
           .purchase__images
-            = link_to image_tag("icons/icon_category.png", class: "gazou"), "#"
+            = image_tag @item.item_images[0].src.url, class: "gazou"
           .purchase__name
-            商品名
-            %p.purchase__price
-              %span.purchase__tax
-                送料込み (税込)
-              %spam.purchase__cost
-                ¥2,280
+            = @item.name
 
       .content3
         .money
           %span
-            支払い金額
+            支払い金額（税込）
           %span.money__price
-            ¥2,280
-        .select
-          .select__type
-            %span.select__box
-              %span.select__checkbox
-                = form_with class: "check-box", method: :post, local: true do |form|
-                  = form.check_box :content
-              %p.select__icon
-                = image_tag "icons/icon_brand.png", class: "icon"
-              %p.select__text
-                dポイント
-          .button
-            = link_to "dアカウント連携", "#", class: "button1"
-        .select2
-          .select__type
-            %span.select__box
-              %span.select__checkbox
-                = form_with class: "check-box", method: :post, local: true do |form|
-                  = form.check_box :content
-              %p.select__icon
-                = image_tag "icons/icon_category.png", class: "icon"
-              %p.select__text
-                ポイント
-          %p.point
-            所持ポイント : P0
-        .select3
-          .select__type
-            %span.select__box
-              %span.select__checkbox
-                = form_with class: "check-box", method: :post, local: true do |form|
-                  = form.check_box :content
-              %p.select3__text
-                メルペイ残高の使用
-          %p.point
-            残高 : ¥85
-        .explain
-          同時に選択した場合、メルカリポイント → メルペイ残高の順でお支払いに適用されます
+            = @item.price 
+            円
 
       .content3
         .section
@@ -109,7 +69,7 @@
       
       .content4
         .purchase-button
-          = link_to "購入する", '#', class: "button2"
+          = link_to "購入する", done_items_path(@item), class: "button2"
 
 
 .description

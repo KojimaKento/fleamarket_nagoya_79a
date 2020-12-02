@@ -20,12 +20,15 @@ Rails.application.routes.draw do
   get "users/:id/logout", to: "users#logout"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  resources :card, only: [:new, :show] do
+  resources :cards, only: [:create, :show, :new, :destroy] do
     collection do
-      post 'show', to: 'card#show'
-      post 'pay', to: 'card#pay'
-      post 'delete', to: 'card#delete'
+      # post 'delete', to: 'credit_card#delete'
+      post 'show'
+      post 'new'
     end
-  end
+    member do
+      get 'confirmation'
+    end
+  end 
 
 end

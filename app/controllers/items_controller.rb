@@ -48,6 +48,13 @@ class ItemsController < ApplicationController
   def purchase
     @item = Item.new
     @item.item_images.new
+    @card = current_user.cards.first
+    if @card.present?
+      customer = Payjp::Customer.retrieve(@card.customer_id)
+      @default_card_information = customer.cards.retrieve(@card.card_id)
+    else
+      redirect_to action: "confirmation", id: current_user.id
+    end
   end
 
   def  done

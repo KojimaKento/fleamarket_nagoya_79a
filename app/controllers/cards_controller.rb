@@ -2,6 +2,7 @@ class CardsController < ApplicationController
 
   # before_action :get_user_params, only: [:edit, :confirmation, :show]
   before_action :get_payjp_info, only: [:new_create, :create, :delete, :show]
+  before_action :card, only: [:destroy, :show]
 
   def new
   end
@@ -25,8 +26,7 @@ class CardsController < ApplicationController
   end
 
   def destroy
-    card = current_user.cards.first
-    if card.present?
+    if @card.present?
       customer = Payjp::Customer.retrieve(card.customer_id)
       customer.delete
       card.delete
@@ -35,13 +35,16 @@ class CardsController < ApplicationController
   end
 
   def show
-    @card = current_user.cards.first
     if @card.present?
       customer = Payjp::Customer.retrieve(@card.customer_id)
       @default_card_information = customer.cards.retrieve(@card.card_id)
     else
       redirect_to action: "confirmation", id: current_user.id
     end
+  end
+
+  def card
+    @card = current_user.cards.first
   end
 
   def confirmation

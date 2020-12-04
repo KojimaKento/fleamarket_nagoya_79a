@@ -1,6 +1,5 @@
 class CardsController < ApplicationController
 
-  # before_action :get_user_params, only: [:edit, :confirmation, :show]
   before_action :get_payjp_info, only: [:new_create, :create, :delete, :show]
   before_action :card, only: [:destroy, :show]
 
@@ -48,8 +47,6 @@ class CardsController < ApplicationController
   end
 
   def confirmation
-    # card = current_user.credit_cards
-    # redirect_to action: "show" if card.exists?
   end
 
   private
@@ -63,4 +60,3 @@ class CardsController < ApplicationController
   end
 
 end
-

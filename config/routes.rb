@@ -22,7 +22,6 @@ Rails.application.routes.draw do
 
   resources :cards, only: [:create, :show, :new, :destroy] do
     collection do
-      # post 'delete', to: 'credit_card#delete'
       post 'show'
       post 'new'
     end

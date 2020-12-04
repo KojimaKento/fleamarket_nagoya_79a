@@ -47,6 +47,8 @@ class CardsController < ApplicationController
   end
 
   def confirmation
+    # card = current_user.credit_cards
+    # redirect_to action: "show" if card.exists?
   end
 
   private

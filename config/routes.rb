@@ -8,10 +8,8 @@ Rails.application.routes.draw do
 
 
   resources :items, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
-    collection do
-      get 'done'
-    end
     member do
+      get 'done'
       get 'purchase'
     end
   end

@@ -51,12 +51,12 @@ class ItemsController < ApplicationController
       customer = Payjp::Customer.retrieve(@card.customer_id)
       @default_card_information = customer.cards.retrieve(@card.card_id)
     else
-      redirect_to action: "confirmation", id: current_user.id
+      redirect_to "/cards/#{current_user.id}/confirmation"
     end
   end
 
   def done
-    @item= Item.find(params[:format])
+    @item= Item.find(params[:id])
     @item.update( buyer_id: current_user.id)
     render :done
   end

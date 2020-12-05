@@ -68,7 +68,6 @@
       .expiration__date {
         height: 83px;
         width: 343px;
-        margin-top: 28px;
         &__text {
           display: flex;
           .date__text {
@@ -192,4 +191,15 @@
       }
     }
   }
+}
+
+.date-number{
+  line-height: 48px;
+}
+
+.back2{
+  margin-left: auto;
+  width: 50%;
+  margin-top: 40px;
+  margin-left: 75px;
 }

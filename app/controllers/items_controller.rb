@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:edit, :update, :destroy, :show]
+  before_action :set_item, only: [:edit, :update, :destroy, :show, :purchase]
 
   def index
     @items = Item.order('id DESC').limit(5).where.not(seller_id: current_user&.id)
@@ -52,13 +52,19 @@ class ItemsController < ApplicationController
   end
 
   def purchase
-    @item = Item.new
-    @item.item_images.new
+    @card = current_user.cards.first
+    if @card.present?
+      customer = Payjp::Customer.retrieve(@card.customer_id)
+      @default_card_information = customer.cards.retrieve(@card.card_id)
+    else
+      redirect_to "/cards/#{current_user.id}/confirmation"
+    end
   end
 
-  def  done
+  def done
     @item= Item.find(params[:id])
     @item.update( buyer_id: current_user.id)
+    render :done
   end
 
   def get_category_children

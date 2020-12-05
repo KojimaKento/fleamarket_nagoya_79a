@@ -1,0 +1,27 @@
+.header
+  .title-bar
+    = link_to image_tag("logo/logo.png", class: "logo"), root_path
+
+.floor
+  .content
+    .content2
+      .content3
+        .text2 購入ありがとうございました。
+        = link_to "トップページに戻る", root_path, class: "button2"
+
+
+
+.description
+  .description__bar
+    %ul.description__list
+      %li.description__lists
+      = link_to 'プライバシー', '#', class: "description__link"
+      %li.description__lists
+      = link_to 'FURIMA利用規約', '#', class: "description__link"
+      %li.description__lists
+      = link_to '特定商取引に関する表記', '#', class: "description__link"
+  .image
+    %h1.app-title
+      = link_to image_tag("logo/logo-white.png", class: "logo"), "#"
+    %p.image__copyright
+      © FURIMA, Inc.

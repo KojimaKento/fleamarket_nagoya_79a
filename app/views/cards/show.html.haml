@@ -1,0 +1,33 @@
+.credit-card__registration
+  .credit-card__registration__text　クレジットカード詳細
+  .credit__form
+    .registration__contents
+      .card__number
+        .card__number__text 
+          .number__text 
+            カード番号
+            .card
+              = "**** **** **** #{ @default_card_information.last4}"
+        .card__number__company
+          .logo__visa
+            = link_to '#' do
+              = image_tag 'logo/logo_visa.gif', alt: 'visa', height: '25px'
+          .logo__mastercard
+            = link_to '#' do
+              = image_tag 'logo/logo_mastercard.gif', alt: 'mastercard', height: '25px'
+          .logo__diners
+            = link_to '#' do
+              = image_tag 'logo/diners_logo_white.gif', alt: 'diners', height: '25px'
+      .expiration__date
+        .expiration__date__text
+          .date__text 有効期限
+          .must__number 必須
+        .expiration__date__contents
+          .date-number
+            = @default_card_information.exp_month.to_s
+          .month__text 月
+          .date-number
+            = @default_card_information.exp_year.to_s.slice(2,3)
+          .year__text 年
+      .back2
+        = link_to 'トップページへ戻る', "/"

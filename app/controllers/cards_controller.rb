@@ -57,7 +57,8 @@ class CardsController < ApplicationController
     if Rails.env == 'development'
       Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
     else
-      Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
+      # Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
+      Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
     end
   end
 

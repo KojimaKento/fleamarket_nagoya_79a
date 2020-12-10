@@ -31,7 +31,7 @@
                 有効期限
               %span.form-require 必須
             .CreditNew__FormField__flex
-              %select.CreditNew__FormField__form.CreditNew__FormField__flex__left{name: "exp_month", type: "text"}
+              %select.CreditNew__FormField__form.CreditNew__FormField__flex__left.select__default#exp_month{name: "exp_month", type: "text"}
                 %option{value: ""} --
                 %option{value: "1"}01
                 %option{value: "2"}02
@@ -47,7 +47,7 @@
                 %option{value: "12"}12
               
               .month__text 月
-              %select.CreditNew__FormField__form.CreditNew__FormField__flex__right{name: "exp_year", type: "text"}
+              %select.CreditNew__FormField__form.CreditNew__FormField__flex__right.select__default#exp_year{name: "exp_year", type: "text"}
                 %option{value: ""} --
                 %option{value: "2019"}19
                 %option{value: "2020"}20

@@ -1,20 +1,35 @@
-.main__content
-  %section.chapter__container
-    %h2.chapter__head クレジットカード情報入力
+.CreditNew
+  .CreditNew__header
+    = image_tag "logo/logo.png"
+  .CreditNew__main
     = form_tag('/cards', method: :post, action: "create", id: 'charge-form',  name: "inputForm", class: "chapter__container__inner") do
-      .form__main__container
-        .form__content
-          %label.payment__card カード番号
-          %span.require__form 必須
-          = text_field_tag "number", "", class: "number input__deafult", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
-          .card__list
-            .card__list__picture
-        .form__content.top__margin
-          %label.payment__card 有効期限
-          %span.require__form 必須
-          .select__box.top__margin
-            .select__box__half
-              %select.select__default#exp_month{name: "exp_month", type: "text"}
+      .CreditNew__main__header
+        お支払い方法
+      .CreditNew__main__contents
+        .CreditNew__main__contents--content
+
+          .CreditNew__FormField
+            .CreditNew__FormField__label
+              カード番号
+            %span.form-require 必須
+            = text_field_tag "number", "", class: "CreditNew__FormField__form number input__deafult", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
+            .card__number__company
+              .logo__visa
+                = link_to '#' do
+                  = image_tag 'logo/logo_visa.gif', alt: 'visa', height: '25px'
+              .logo__mastercard
+                = link_to '#' do
+                  = image_tag 'logo/logo_mastercard.gif', alt: 'mastercard', height: '25px'
+              .logo__diners
+                = link_to '#' do
+                  = image_tag 'logo/diners_logo_white.gif', alt: 'diners', height: '25px'
+
+          .CreditNew__FormField
+            .CreditNew__FormField__label
+              有効期限
+            %span.form-require 必須
+            .CreditNew__FormField__flex
+              %select.FormField__input.ProfileNew__form.select__default#exp_month{name: "exp_month", type: "text"}
                 %option{value: ""} --
                 %option{value: "1"}01
                 %option{value: "2"}02
@@ -30,10 +45,8 @@
                 %option{value: "12"}12
               %i
                 = icon('fas', 'chevron-down')
-              %span 月
-            .select__box__half
-              .icon
-              %select.select__default#exp_year{name: "exp_year", type: "text"}
+              .month__text 月
+              %select.FormField__input.ProfileNew__form.select__default#exp_year{name: "exp_year", type: "text"}
                 %option{value: ""} --
                 %option{value: "2019"}19
                 %option{value: "2020"}20
@@ -48,14 +61,31 @@
                 %option{value: "2029"}29
               %i
                 = icon('fas', 'chevron-down')
-              %span  年
-        .form__content.top__margin
-          %label セキュリティーコード
-          %span.require__form 必須
-          = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4", id: "cvc"
-          .single__code
-            .single__code__text
-            %span.form__question ? 
-            %span カードの裏面の番号とは？
-          #card_token
-          = submit_tag "追加する", id: "token_submit", class: "top__margin"
+              .year__text 年
+          .CreditNew__FormField
+            .CreditNew__FormField__label
+              セキュリティコード
+            %span.form-require 必須
+            = text_field_tag "cvc", "", class: "CreditNew__FormField__form cvc", placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4", id: "cvc"
+            .security__code__backnumber
+              .security__code__backnumber__question ?
+              .security__code__backnumber__text カード裏面の番号とは？
+          .actions
+            = submit_tag "追加する", id: "token_submit", class: "top__margin"
+          .back__text もどる
+
+    .AccountPage__footer
+      .AccountPage__footer__top
+        %ul.AccountPage__footer__lists
+          %li
+          = link_to 'プライバシー', '#', class: "AccountPage__footer__lists__link"
+          %li
+          = link_to 'FURIMA利用規約', '#', class: "AccountPage__footer__lists__link"
+          %li
+          = link_to '特定商取引に関する表記', '#', class: "AccountPage__footer__lists__link"
+      .AccountPage__footer__image
+        %h1.app-title
+          = link_to image_tag("logo/logo-white.png", class: "logo"), "#"
+        %p.AccountPage__footer__image__copyright
+          © FURIMA, Inc.
+

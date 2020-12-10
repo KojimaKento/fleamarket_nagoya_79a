@@ -9,27 +9,29 @@
         .CreditNew__main__contents--content
 
           .CreditNew__FormField
-            .CreditNew__FormField__label
-              カード番号
-            %span.form-require 必須
+            .CreditNew__FormField__header
+              .CreditNew__FormField__header__label
+                カード番号
+              %span.form-require 必須
             = text_field_tag "number", "", class: "CreditNew__FormField__form number input__deafult", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
             .card__number__company
               .logo__visa
                 = link_to '#' do
-                  = image_tag 'logo/logo_visa.gif', alt: 'visa', height: '25px'
+                  = image_tag 'logo/logo_visa.gif', alt: 'visa', height: '25px', class: "card__number__company--one"
               .logo__mastercard
                 = link_to '#' do
-                  = image_tag 'logo/logo_mastercard.gif', alt: 'mastercard', height: '25px'
+                  = image_tag 'logo/logo_mastercard.gif', alt: 'mastercard', height: '25px', class: "card__number__company--one"
               .logo__diners
                 = link_to '#' do
-                  = image_tag 'logo/diners_logo_white.gif', alt: 'diners', height: '25px'
+                  = image_tag 'logo/diners_logo_white.gif', alt: 'diners', height: '25px', class: "card__number__company--one"
 
           .CreditNew__FormField
-            .CreditNew__FormField__label
-              有効期限
-            %span.form-require 必須
+            .CreditNew__FormField__header
+              .CreditNew__FormField__header__label
+                有効期限
+              %span.form-require 必須
             .CreditNew__FormField__flex
-              %select.FormField__input.ProfileNew__form.select__default#exp_month{name: "exp_month", type: "text"}
+              %select.CreditNew__FormField__form.CreditNew__FormField__flex__left{name: "exp_month", type: "text"}
                 %option{value: ""} --
                 %option{value: "1"}01
                 %option{value: "2"}02
@@ -43,10 +45,9 @@
                 %option{value: "10"}10
                 %option{value: "11"}11
                 %option{value: "12"}12
-              %i
-                = icon('fas', 'chevron-down')
+              
               .month__text 月
-              %select.FormField__input.ProfileNew__form.select__default#exp_year{name: "exp_year", type: "text"}
+              %select.CreditNew__FormField__form.CreditNew__FormField__flex__right{name: "exp_year", type: "text"}
                 %option{value: ""} --
                 %option{value: "2019"}19
                 %option{value: "2020"}20
@@ -59,20 +60,23 @@
                 %option{value: "2027"}27
                 %option{value: "2028"}28
                 %option{value: "2029"}29
-              %i
-                = icon('fas', 'chevron-down')
+              
               .year__text 年
           .CreditNew__FormField
-            .CreditNew__FormField__label
-              セキュリティコード
-            %span.form-require 必須
+            .CreditNew__FormField__header
+              .CreditNew__FormField__header__label
+                セキュリティコード
+              %span.form-require 必須
             = text_field_tag "cvc", "", class: "CreditNew__FormField__form cvc", placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4", id: "cvc"
-            .security__code__backnumber
-              .security__code__backnumber__question ?
-              .security__code__backnumber__text カード裏面の番号とは？
+            .security__code
+              .security__code__icon
+                = icon('fas', 'question-circle')
+              .security__code__text カード裏面の番号とは？
           .actions
-            = submit_tag "追加する", id: "token_submit", class: "top__margin"
-          .back__text もどる
+            = submit_tag "追加する", id: "token_submit", class: "CreditNew-btn top__margin" 
+          
+          = link_to "#" do
+            .back__text もどる
 
     .AccountPage__footer
       .AccountPage__footer__top

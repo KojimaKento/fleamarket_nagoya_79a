@@ -25,7 +25,10 @@
               .PayBtn SOLD 
           - elsif user_signed_in? && @item.seller_id != current_user.id
             .itemBox_button
-              = link_to "購入画面に進む", purchase_item_path, class: "PayBtn"
+              - if current_user.cards.present?
+                = link_to "購入画面に数む", card_path(current_user), class: "PayBtn"
+              - else
+                = link_to "購入画面に進む", purchase_item_path, class: "PayBtn"
           - elsif user_signed_in? && @item.seller_id == current_user.id
             .itemBox_button
               = link_to "削除", item_path(@item.id), method: :delete, class: "PayBtn"
